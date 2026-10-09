@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Savanna Motors — Inventory Wireframe</title>
+<style>
+  :root{--green:#1B4332;--green-2:#2D6A4F;--gold:#E9A23B;--sand:#F7F3EC;--ink:#14201B;--muted:#6b7a72;--line:#d9d4c8;--wire:#ece8df;--wiredash:#b9b3a6}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#e9e5db}
+  .wrap{max-width:1180px;margin:0 auto;background:#fff;box-shadow:0 8px 40px rgba(0,0,0,.12);min-height:100vh}
+  .tag{display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .note{font-size:11px;color:var(--muted);font-style:italic}
+  .ph{background:repeating-linear-gradient(45deg,var(--wire),var(--wire) 12px,#f3f0e9 12px,#f3f0e9 24px);border:1px dashed var(--wiredash);color:#8a8477;display:flex;align-items:center;justify-content:center;font-size:12px;border-radius:8px}
+  .ann{border-left:3px solid var(--gold);background:#fffdf7;padding:6px 10px;font-size:11.5px;color:#5c5a52;margin:8px 0;border-radius:0 6px 6px 0}
+  .btn{border-radius:999px;padding:10px 16px;font-weight:700;font-size:13px;border:0;cursor:pointer}
+  .btn-gold{background:var(--gold);color:#241a08}.btn-green{background:var(--green);color:#fff}.btn-out{background:#fff;border:1.5px solid var(--green);color:var(--green)}
+  .badge{background:var(--green);color:#fff;font-size:10px;padding:3px 8px;border-radius:999px;font-weight:700}
+  header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 28px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:5}
+  .crumb{font-size:12px;color:var(--muted);padding:12px 28px 0}
+  .layout{display:grid;grid-template-columns:270px 1fr;gap:22px;padding:16px 28px 40px;align-items:start}
+  .card{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="ph" style="width:40px;height:40px;border-radius:50%">🦒</div>
+      <div><div style="font-weight:800;color:var(--green)">SAVANNA<span style="color:var(--gold)">MOTORS</span></div></div>
+    </div>
+    <nav style="display:flex;gap:20px;font-weight:600;font-size:14px;color:#3a4a42"><span>Inventory</span><span>Import a Car</span><span>Financing</span><span>Sell</span><span>Guides</span></nav>
+    <div style="display:flex;gap:8px"><button class="btn btn-out">Login</button><button class="btn btn-gold">WhatsApp</button></div>
+  </header>
+
+  <div class="crumb">Home › Inventory › <b style="color:var(--green)">Toyota — all models</b> <span class="note">· 240 vehicles</span></div>
+
+  <!-- SEARCH BAR STRIP -->
+  <div style="margin:10px 28px;border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <div class="ph" style="height:36px;flex:1;min-width:180px;justify-content:flex-start;padding-left:12px">🔎 Search make, model or keyword…</div>
+    <div class="ph" style="height:36px;width:120px">Any city ▾</div>
+    <div class="ph" style="height:36px;width:130px">Price range ▾</div>
+    <button class="btn btn-green">Search</button>
+    <div class="ann" style="margin:0;flex-basis:100%">02 · Inventory / Search — the workhorse page. Left = faceted filters; top = search + sort + view toggle; center = results grid.</div>
+  </div>
+
+  <div class="layout">
+    <!-- ============ FILTER SIDEBAR ============ -->
+    <aside style="border:1px solid var(--line);border-radius:12px;padding:14px;position:sticky;top:80px">
+      <div style="display:flex;justify-content:space-between;align-items:center"><b>Filters</b><span class="note">Clear all</span></div>
+      <div class="note" style="margin-top:12px">Condition</div>
+      <div style="font-size:13px;line-height:1.9">
+        ☑ Brand new &nbsp; ☑ Fresh import &nbsp; ☐ Locally used &nbsp; ☐ In transit
+      </div>
+      <div class="note" style="margin-top:12px">Make</div>
+      <div style="font-size:13px;line-height:1.9">
+        ☑ Toyota (96) &nbsp; ☐ Nissan (40)<br>☐ Mazda (28) ☐ Subaru (18)<br>☐ Honda (14) ☐ Isuzu (22)
+      </div>
+      <div class="note" style="margin-top:12px">Price (KSh)</div>
+      <div class="ph" style="height:30px">0 ──●━━━━●── 15M</div>
+      <div class="note" style="margin-top:12px">Body type</div>
+      <div style="font-size:13px;line-height:1.9">☐ SUV ☐ Sedan ☐ Hatchback<br>☐ Pickup ☐ Van ☐ Bus</div>
+      <div class="note" style="margin-top:12px">Fuel / Transmission</div>
+      <div style="font-size:13px;line-height:1.9">☐ Petrol ☐ Diesel ☐ Hybrid ☐ EV · ☐ Auto ☐ Manual</div>
+      <div class="note" style="margin-top:12px">Year</div>
+      <div class="ph" style="height:30px">2019 ──●━━━━●── 2026</div>
+      <div class="note" style="margin-top:12px">Mileage</div>
+      <div class="ph" style="height:30px">0 ──●━━━━●── 200k km</div>
+      <button class="btn btn-green" style="width:100%;margin-top:14px">Apply filters</button>
+      <div class="ann">Filters reflect real search behaviour: condition, make, price, body, fuel, transmission, year, mileage, city. Mobile → off-canvas drawer with a floating "Filters (2)" button.</div>
+    </aside>
+
+    <!-- ============ RESULTS ============ -->
+    <main>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:10px">
+        <div><b style="font-size:15px">240 vehicles found</b> <span class="note">· Toyota in Nairobi</span></div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <div class="ph" style="height:32px;width:150px">Sort: Newest first ▾</div>
+          <div class="ph" style="height:32px;width:38px">▦</div>
+          <div class="ph" style="height:32px;width:38px">☰</div>
+          <div class="ph" style="height:32px;width:110px">🗺 Map view</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <!-- repeat car cards x6 -->
+        <div class="card">
+          <div class="ph" style="height:130px;border-radius:0">Car photo · 🔄360</div>
+          <div style="padding:10px">
+            <div style="display:flex;justify-content:space-between"><b style="font-size:13px">2019 Toyota Harrier Z</b></div>
+            <div class="note">48,000 km · Petrol · CVT</div>
+            <div style="font-weight:800;color:var(--green);margin-top:4px">KSh 3,450,000</div>
+            <div style="font-size:11px;color:var(--muted)">or KSh 68,900/mo</div>
+            <div style="display:flex;gap:6px;margin-top:8px"><button class="btn btn-green" style="flex:1;padding:7px">WhatsApp</button><button class="btn btn-out" style="flex:1;padding:7px">Details</button></div>
+          </div>
+        </div>
+        <div class="card"><div class="ph" style="height:130px;border-radius:0">Car photo</div><div style="padding:10px"><b style="font-size:13px">2020 Toyota Fielder WxB</b><div class="note">62,000 km · Hybrid</div><div style="font-weight:800;color:var(--green);margin-top:4px">KSh 2,150,000</div><div style="font-size:11px;color:var(--muted)">or KSh 42,900/mo</div><div style="display:flex;gap:6px;margin-top:8px"><button class="btn btn-green" style="flex:1;padding:7px">WhatsApp</button><button class="btn btn-out" style="flex:1;padding:7px">Details</button></div></div></div>
+        <div class="card"><div class="ph" style="height:130px;border-radius:0">Car photo</div><div style="padding:10px"><b style="font-size:13px">2017 Toyota Probox</b><div class="note">120,000 km · Petrol</div><div style="font-weight:800;color:var(--green);margin-top:4px">KSh 1,190,000</div><div style="font-size:11px;color:var(--muted)">or KSh 23,700/mo</div><div style="display:flex;gap:6px;margin-top:8px"><button class="btn btn-green" style="flex:1;padding:7px">WhatsApp</button><button class="btn btn-out" style="flex:1;padding:7px">Details</button></div></div></div>
+        <div class="card"><div class="ph" style="height:130px;border-radius:0">Car photo</div><div style="padding:10px"><b style="font-size:13px">2021 Toyota RAV4 Hybrid</b><div class="note">55,000 km · Hybrid AWD</div><div style="font-weight:800;color:var(--green);margin-top:4px">KSh 4,250,000</div><div style="font-size:11px;color:var(--muted)">or KSh 84,900/mo</div><div style="display:flex;gap:6px;margin-top:8px"><button class="btn btn-green" style="flex:1;padding:7px">WhatsApp</button><button class="btn btn-out" style="flex:1;padding:7px">Details</button></div></div></div>
+        <div class="card"><div class="ph" style="height:130px;border-radius:0">Car photo</div><div style="padding:10px"><b style="font-size:13px">2018 Toyota Land Cruiser Prado</b><div class="note">90,000 km · Diesel 4WD</div><div style="font-weight:800;color:var(--green);margin-top:4px">KSh 5,860,000</div><div style="font-size:11px;color:var(--muted)">or KSh 117,200/mo</div><div style="display:flex;gap:6px;margin-top:8px"><button class="btn btn-green" style="flex:1;padding:7px">WhatsApp</button><button class="btn btn-out" style="flex:1;padding:7px">Details</button></div></div></div>
+        <div class="card"><div class="ph" style="height:130px;border-radius:0">Car photo</div><div style="padding:10px"><b style="font-size:13px">2019 Toyota Axio Hybrid</b><div class="note">70,000 km · Hybrid</div><div style="font-weight:800;color:var(--green);margin-top:4px">KSh 1,850,000</div><div style="font-size:11px;color:var(--muted)">or KSh 36,900/mo</div><div style="display:flex;gap:6px;margin-top:8px"><button class="btn btn-green" style="flex:1;padding:7px">WhatsApp</button><button class="btn btn-out" style="flex:1;padding:7px">Details</button></div></div></div>
+      </div>
+
+      <div style="display:flex;justify-content:center;gap:6px;margin-top:22px">
+        <div class="ph" style="width:36px;height:36px">‹</div>
+        <div class="ph" style="width:36px;height:36px">1</div>
+        <div class="ph" style="width:36px;height:36px">2</div>
+        <div class="ph" style="width:36px;height:36px">3</div>
+        <div class="ph" style="width:36px;height:36px">…</div>
+        <div class="ph" style="width:36px;height:36px">›</div>
+      </div>
+      <div class="ann">Result cards carry trust + price + monthly + instant WhatsApp. Save-search prompt appears after filters are applied (drives return visits + email/SMS alerts).</div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

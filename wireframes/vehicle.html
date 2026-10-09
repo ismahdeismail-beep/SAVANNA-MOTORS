@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Savanna Motors — Vehicle Detail Wireframe</title>
+<style>
+  :root{--green:#1B4332;--green-2:#2D6A4F;--gold:#E9A23B;--sand:#F7F3EC;--ink:#14201B;--muted:#6b7a72;--line:#d9d4c8;--wire:#ece8df;--wiredash:#b9b3a6}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#e9e5db}
+  .wrap{max-width:1180px;margin:0 auto;background:#fff;box-shadow:0 8px 40px rgba(0,0,0,.12);min-height:100vh}
+  .note{font-size:11px;color:var(--muted);font-style:italic}
+  .ph{background:repeating-linear-gradient(45deg,var(--wire),var(--wire) 12px,#f3f0e9 12px,#f3f0e9 24px);border:1px dashed var(--wiredash);color:#8a8477;display:flex;align-items:center;justify-content:center;font-size:12px;border-radius:8px}
+  .ann{border-left:3px solid var(--gold);background:#fffdf7;padding:6px 10px;font-size:11.5px;color:#5c5a52;margin:8px 0;border-radius:0 6px 6px 0}
+  .btn{border-radius:999px;padding:11px 16px;font-weight:700;font-size:13px;border:0;cursor:pointer}
+  .btn-gold{background:var(--gold);color:#241a08}.btn-green{background:var(--green);color:#fff}.btn-out{background:#fff;border:1.5px solid var(--green);color:var(--green)}
+  .badge{background:var(--green);color:#fff;font-size:10px;padding:3px 8px;border-radius:999px;font-weight:700}
+  header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 28px;border-bottom:1px solid var(--line)}
+  .crumb{font-size:12px;color:var(--muted);padding:12px 28px 0}
+  .body{padding:14px 28px 44px}
+  .grid2{display:grid;grid-template-columns:1.35fr 1fr;gap:24px;align-items:start}
+  .spec{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:7px 0;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div style="display:flex;align-items:center;gap:10px"><div class="ph" style="width:40px;height:40px;border-radius:50%">🦒</div><div><div style="font-weight:800;color:var(--green)">SAVANNA<span style="color:var(--gold)">MOTORS</span></div></div></div>
+    <nav style="display:flex;gap:20px;font-weight:600;font-size:14px;color:#3a4a42"><span>Inventory</span><span>Import a Car</span><span>Financing</span><span>Sell</span><span>Guides</span></nav>
+    <div style="display:flex;gap:8px"><button class="btn btn-out">Login</button><button class="btn btn-gold">WhatsApp</button></div>
+  </header>
+
+  <div class="crumb">Home › Inventory › Toyota › <b style="color:var(--green)">Harrier Z · 2019</b></div>
+  <div class="ann" style="margin:10px 28px 0">03 · Vehicle Detail — the money page. Left column = gallery + specs + inspection; right sticky column = price, financing, reserve, contact.</div>
+
+  <div class="body">
+    <div class="grid2">
+      <!-- LEFT -->
+      <div>
+        <div class="ph" style="height:320px">Main photo · swipe · 🔄 360° · ▶ video</div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <div class="ph" style="height:60px;width:80px"></div><div class="ph" style="height:60px;width:80px"></div>
+          <div class="ph" style="height:60px;width:80px"></div><div class="ph" style="height:60px;width:80px"></div>
+          <div class="ph" style="height:60px;width:80px">+9</div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin:12px 0 6px">
+          <span class="badge" style="background:var(--gold);color:#241a08">Fresh import</span>
+          <span class="badge">KEBS inspected</span>
+          <span class="badge" style="background:#b5651d">Auction grade 4.5</span>
+          <span class="badge" style="background:#7a7a7a">Duty paid</span>
+        </div>
+        <h1 style="font-size:24px;margin:6px 0">2019 Toyota Harrier Z · 2.0L</h1>
+        <div class="note" style="font-size:12px">Chassis ZSU60‑xxxxxxx · Reg KDA 123A · Nairobi</div>
+
+        <!-- TABS -->
+        <div style="display:flex;gap:20px;font-weight:700;font-size:13px;border-bottom:2px solid var(--line);margin-top:18px">
+          <span style="border-bottom:2px solid var(--gold);padding-bottom:8px">Overview</span>
+          <span style="color:var(--muted);padding-bottom:8px">Specification</span>
+          <span style="color:var(--muted);padding-bottom:8px">Inspection report</span>
+          <span style="color:var(--muted);padding-bottom:8px">Financing</span>
+          <span style="color:var(--muted);padding-bottom:8px">History</span>
+        </div>
+
+        <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:16px;gap:24px">
+          <div>
+            <b style="font-size:13px">Key specification</b>
+            <div class="spec"><span>Year / First reg.</span><b>2019</b></div>
+            <div class="spec"><span>Mileage</span><b>48,000 km</b></div>
+            <div class="spec"><span>Engine</span><b>2.0L Petrol</b></div>
+            <div class="spec"><span>Transmission</span><b>CVT Automatic</b></div>
+            <div class="spec"><span>Drive</span><b>2WD</b></div>
+            <div class="spec"><span>Body</span><b>SUV</b></div>
+            <div class="spec"><span>Seats</span><b>5</b></div>
+            <div class="spec"><span>Colour</span><b>Pearl White</b></div>
+          </div>
+          <div>
+            <b style="font-size:13px">Features</b>
+            <div class="spec"><span>Leather seats</span><b>✓</b></div>
+            <div class="spec"><span>Reverse camera</span><b>✓</b></div>
+            <div class="spec"><span>Push start</span><b>✓</b></div>
+            <div class="spec"><span>Alloy rims</span><b>✓</b></div>
+            <div class="spec"><span>Power windows</span><b>✓</b></div>
+            <div class="spec"><span>Climate control</span><b>✓</b></div>
+            <div class="spec"><span>Airbags</span><b>6</b></div>
+          </div>
+        </div>
+
+        <!-- INSPECTION -->
+        <div style="margin-top:18px;border:1px solid var(--line);border-radius:12px;padding:14px">
+          <b style="font-size:13px">🛡️ Pre‑shipment inspection & auction sheet</b>
+          <p class="note">KEBS roadworthiness (QISJ) confirmed · auction grade 4.5 · no accident history. View/download report.</p>
+          <div style="display:flex;gap:10px"><div class="ph" style="height:100px;flex:1">Auction sheet</div><div class="ph" style="height:100px;flex:1">Inspection certificate</div><div class="ph" style="height:100px;flex:1">Chassis & odometer</div></div>
+        </div>
+        <div class="ann">Trust block = the conversion lever. Auction sheet + KEBS certificate are what separate a reputable importer (Automark/CFAO style) from a roadside seller.</div>
+      </div>
+
+      <!-- RIGHT: STICKY PRICE BOX -->
+      <aside style="position:sticky;top:16px;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.06)">
+        <div class="note">Asking price</div>
+        <div style="font-size:30px;font-weight:800;color:var(--green)">KSh 3,450,000</div>
+        <div style="font-size:12px;color:var(--muted)">Fixed · duty paid · exclude insurance</div>
+
+        <div style="background:var(--sand);border-radius:10px;padding:12px;margin:14px 0">
+          <b style="font-size:12px">Landed cost breakdown</b>
+          <div class="spec" style="border-color:#e2dccf"><span>Vehicle (CIF)</span><b>KSh 2,480,000</b></div>
+          <div class="spec" style="border-color:#e2dccf"><span>Import duty + excise + VAT</span><b>KSh 720,000</b></div>
+          <div class="spec" style="border-color:#e2dccf"><span>Clearing + transport</span><b>KSh 250,000</b></div>
+          <div class="spec" style="border:none"><span><b>Total</b></span><b style="color:var(--green)">KSh 3,450,000</b></div>
+        </div>
+
+        <div style="border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:12px">
+          <b style="font-size:12px">Finance from</b>
+          <div style="font-size:22px;font-weight:800;color:var(--green)">KSh 68,900<small style="font-size:12px;font-weight:400">/mo</small></div>
+          <div class="note">20% down · 48 months · 13.5% p.a.</div>
+        </div>
+
+        <button class="btn btn-gold" style="width:100%;margin-bottom:8px">💬 WhatsApp this car</button>
+        <button class="btn btn-green" style="width:100%;margin-bottom:8px">Reserve with M‑Pesa deposit</button>
+        <button class="btn btn-out" style="width:100%;margin-bottom:8px">Apply for financing</button>
+        <div style="display:flex;gap:8px"><button class="btn btn-out" style="flex:1">📞 Call</button><button class="btn btn-out" style="flex:1">♪ Test drive</button></div>
+        <div class="note" style="margin-top:10px">Deposit KSh 50,000 (refundable) · balance on delivery</div>
+      </aside>
+    </div>
+
+    <div class="ann" style="margin-top:20px">Sticky CTA column keeps price + financing + WhatsApp always visible on scroll. Deposit lands via M‑Pesa STK push; balance via bank transfer or financed loan.</div>
+
+    <h3 style="margin-top:26px">Similar vehicles</h3>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+      <div class="ph" style="height:120px">Similar car</div><div class="ph" style="height:120px">Similar car</div>
+      <div class="ph" style="height:120px">Similar car</div><div class="ph" style="height:120px">Similar car</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

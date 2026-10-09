@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Savanna Motors — Guides / Blog Wireframe</title>
+<style>
+  :root{--green:#1B4332;--gold:#E9A23B;--sand:#F7F3EC;--ink:#14201B;--muted:#6b7a72;--line:#d9d4c8;--wire:#ece8df;--wiredash:#b9b3a6}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#e9e5db}
+  .wrap{max-width:1080px;margin:0 auto;background:#fff;box-shadow:0 8px 40px rgba(0,0,0,.12);min-height:100vh}
+  .note{font-size:11px;color:var(--muted);font-style:italic}
+  .ph{background:repeating-linear-gradient(45deg,var(--wire),var(--wire) 12px,#f3f0e9 12px,#f3f0e9 24px);border:1px dashed var(--wiredash);color:#8a8477;display:flex;align-items:center;justify-content:center;font-size:12px;border-radius:8px}
+  .ann{border-left:3px solid var(--gold);background:#fffdf7;padding:6px 10px;font-size:11.5px;color:#5c5a52;margin:8px 0;border-radius:0 6px 6px 0}
+  .btn{border-radius:999px;padding:10px 16px;font-weight:700;font-size:13px;border:0;cursor:pointer}
+  .btn-out{background:#fff;border:1.5px solid var(--green);color:var(--green)}
+  header{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;border-bottom:1px solid var(--line)}
+  section{padding:22px 28px;border-bottom:8px dashed #f0ece3}
+  .cat{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:12px;font-weight:600;color:#3a4a42}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div style="display:flex;align-items:center;gap:10px"><div class="ph" style="width:40px;height:40px;border-radius:50%">🦒</div><div style="font-weight:800;color:var(--green)">SAVANNA<span style="color:var(--gold)">MOTORS</span></div></div>
+    <nav style="display:flex;gap:20px;font-weight:600;font-size:14px;color:#3a4a42"><span>Inventory</span><span>Import a Car</span><span>Financing</span><span>Sell</span><span style="color:var(--gold)">Guides</span></nav>
+    <button class="btn btn-out">Subscribe</button>
+  </header>
+
+  <div style="background:#12301f;color:#fff;padding:30px 28px">
+    <span class="note" style="color:var(--gold)">08 · GUIDES / BLOG</span>
+    <h1 style="margin:6px 0;font-size:28px">Guides & import intelligence</h1>
+    <p style="color:#bcd6c8;max-width:60ch">Everything about importing, taxing, financing and owning a car in East Africa — written by people who do this daily.</p>
+  </div>
+
+  <section>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <span class="cat" style="background:var(--green);color:#fff">All</span>
+      <span class="cat">Importing</span><span class="cat">KRA & duty</span><span class="cat">Financing</span>
+      <span class="cat">Buying guides</span><span class="cat">Maintenance</span><span class="cat">EV & hybrid</span>
+    </div>
+
+    <!-- FEATURED -->
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin-top:18px">
+      <div style="border:1px solid var(--line);border-radius:12px;overflow:hidden">
+        <div class="ph" style="height:200px;border-radius:0">Featured image</div>
+        <div style="padding:14px">
+          <span class="note" style="color:var(--gold);font-weight:700">IMPORTING</span>
+          <h3 style="margin:6px 0">How to import a car from Japan to Kenya: the complete 2026 guide</h3>
+          <p class="note">Age rule, KEBS inspection, RoRo shipping, KRA duty and clearance — step by step with real cost examples.</p>
+        </div>
+      </div>
+      <div>
+        <div style="border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px"><b style="font-size:13px">KRA import duty explained: CRSP, excise & VAT</b><div class="note">6 min read</div></div>
+        <div style="border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px"><b style="font-size:13px">Best fuel‑efficient cars in Kenya (2026)</b><div class="note">8 min read</div></div>
+        <div style="border:1px solid var(--line);border-radius:12px;padding:12px"><b style="font-size:13px">Car financing: how to qualify with a bank</b><div class="note">5 min read</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Latest articles</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px">
+      <div><div class="ph" style="height:120px"></div><b style="font-size:13px">Duty vs. landed cost: what you actually pay</b><div class="note">KRA & duty · 7 min</div></div>
+      <div><div class="ph" style="height:120px"></div><b style="font-size:13px">Probox vs. Fielder: which for your business?</b><div class="note">Buying guides · 6 min</div></div>
+      <div><div class="ph" style="height:120px"></div><b style="font-size:13px">Hybrid vs. petrol in Nairobi traffic</b><div class="note">EV & hybrid · 5 min</div></div>
+      <div><div class="ph" style="height:120px"></div><b style="font-size:13px">Shipping to Uganda, Tanzania & Rwanda</b><div class="note">Importing · 9 min</div></div>
+      <div><div class="ph" style="height:120px"></div><b style="font-size:13px">Auction grades explained (3.5 vs 4.5)</b><div class="note">Importing · 6 min</div></div>
+      <div><div class="ph" style="height:120px"></div><b style="font-size:13px">Servicing a fresh import in Kenya</b><div class="note">Maintenance · 5 min</div></div>
+    </div>
+    <a class="btn btn-out" style="display:inline-block;margin-top:16px;text-decoration:none">Load more</a>
+    <div class="ann">Same SEO playbook as Cheki — these articles rank for "import a car to Kenya", "KRA duty calculator", "Toyota Probox price Kenya" and funnel organic traffic into inventory + import leads. Each article ends with an inventory/CTA block.</div>
+  </section>
+
+  <section>
+    <h3>Free tools</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+      <div style="border:1px solid var(--line);border-radius:12px;padding:14px"><b style="font-size:13px">🧮 Landed‑cost calculator</b><p class="note">Estimate duty + total by model/year.</p></div>
+      <div style="border:1px solid var(--line);border-radius:12px;padding:14px"><b style="font-size:13px">💳 Loan calculator</b><p class="note">Monthly repayment by deposit & term.</p></div>
+      <div style="border:1px solid var(--line);border-radius:12px;padding:14px"><b style="font-size:13px">✅ Import eligibility check</b><p class="note">Is the year within the 8‑yr rule?</p></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

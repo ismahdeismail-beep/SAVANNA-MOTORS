@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Savanna Motors — Homepage Wireframe v1</title>
+<style>
+  :root{
+    --green:#1B4332; --green-2:#2D6A4F; --gold:#E9A23B; --sand:#F7F3EC;
+    --ink:#14201B; --muted:#6b7a72; --line:#d9d4c8; --wire:#ece8df; --wiredash:#b9b3a6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#e9e5db}
+  .wrap{max-width:1120px;margin:0 auto;background:#fff;box-shadow:0 8px 40px rgba(0,0,0,.12)}
+  .tag{display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .note{font-size:11px;color:var(--muted);font-style:italic}
+  .ph{background:
+        repeating-linear-gradient(45deg,var(--wire),var(--wire) 12px,#f3f0e9 12px,#f3f0e9 24px);
+        border:1px dashed var(--wiredash);color:#8a8477;display:flex;align-items:center;justify-content:center;
+        font-size:12px;letter-spacing:.05em;border-radius:8px}
+  .ann{border-left:3px solid var(--gold);background:#fffdf7;padding:6px 10px;font-size:11.5px;color:#5c5a52;margin:8px 0;border-radius:0 6px 6px 0}
+  section{padding:26px 34px;border-bottom:8px dashed #f0ece3;position:relative}
+  .sec-label{position:absolute;top:8px;right:34px;font-size:10px;font-weight:700;color:#c9c3b4;letter-spacing:.12em}
+  h1,h2,h3{margin:.2em 0}
+  .btn{border-radius:999px;padding:12px 20px;font-weight:700;font-size:14px;border:0;cursor:pointer}
+  .btn-gold{background:var(--gold);color:#241a08}
+  .btn-green{background:var(--green);color:#fff}
+  .btn-out{background:#fff;border:1.5px solid var(--green);color:var(--green)}
+  .row{display:flex;gap:12px;flex-wrap:wrap}
+  .grid{display:grid;gap:16px}
+  .badge{background:var(--green);color:#fff;font-size:10px;padding:3px 8px;border-radius:999px;font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ================= UTILITY BAR ================= -->
+  <div style="background:var(--green);color:#cfe3d8;font-size:12px;padding:8px 34px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+    <span>📞 +254 700 000 000 &nbsp;•&nbsp; 💬 WhatsApp &nbsp;•&nbsp; ✉️ sales@savannamotors.co.ke</span>
+    <span>🚢 Track my import &nbsp;|&nbsp; 🇯🇵 Japan &nbsp; 🇬🇧 UK &nbsp; 🇦🇪 Dubai &nbsp;|&nbsp; 📍 Nairobi · Mombasa · Eldoret</span>
+  </div>
+
+  <!-- ================= HEADER / NAV ================= -->
+  <header style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 34px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:5">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="ph" style="width:42px;height:42px;border-radius:50%">🦒</div>
+      <div>
+        <div style="font-weight:800;font-size:18px;color:var(--green);letter-spacing:-.02em">SAVANNA<span style="color:var(--gold)">MOTORS</span></div>
+        <div style="font-size:9px;color:var(--muted);letter-spacing:.18em">IMPORT · FINANCE · DRIVE</div>
+      </div>
+    </div>
+    <nav style="display:flex;gap:22px;font-weight:600;font-size:14px;color:#3a4a42">
+      <span>Inventory</span><span>Import a Car</span><span>Financing</span><span>Sell / Trade‑in</span><span>Guides</span><span>About</span>
+    </nav>
+    <div class="row" style="gap:8px">
+      <button class="btn btn-out" style="padding:9px 14px">Login</button>
+      <button class="btn btn-gold" style="padding:9px 16px">Book test drive</button>
+    </div>
+  </header>
+  <div class="ann" style="margin:10px 34px 0">Navigation: primary categories + sticky; right side has Account + high‑intent CTA. Mobile collapses to hamburger + persistent WhatsApp bubble.</div>
+
+  <!-- ================= HERO + SEARCH ================= -->
+  <section style="background:linear-gradient(120deg,#12301f,#1B4332 60%,#2D6A4F);color:#fff;padding:40px 34px 34px">
+    <span class="sec-label" style="color:#6f9b83">01 · HERO</span>
+    <div class="grid" style="grid-template-columns:1.05fr 1fr;align-items:center">
+      <div>
+        <span class="tag">Fresh imports · Certified · Financed</span>
+        <h1 style="font-size:38px;line-height:1.1;margin:10px 0">Your next car,<br>straight from the source.</h1>
+        <p style="color:#bcd6c8;max-width:44ch">We source, ship, clear and register quality vehicles from Japan, the UK and Dubai — delivered to your door across East Africa. Transparent landed cost, no surprises.</p>
+        <div class="row" style="margin-top:18px">
+          <button class="btn btn-gold">Browse inventory</button>
+          <button class="btn" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.4)">Import a specific car →</button>
+        </div>
+        <div class="row" style="margin-top:20px;font-size:12px;color:#9fc0ae;gap:18px">
+          <span>✅ 8‑yr rule handled</span><span>✅ KEBS inspection</span><span>✅ M‑Pesa deposit</span>
+        </div>
+      </div>
+      <div class="ph" style="height:230px">Hero image / video — car on savanna road</div>
+    </div>
+
+    <!-- SEARCH WIDGET -->
+    <div style="background:#fff;color:var(--ink);border-radius:14px;padding:14px;margin-top:24px;box-shadow:0 12px 30px rgba(0,0,0,.25)">
+      <div style="display:flex;gap:8px;font-size:12px;font-weight:700;margin-bottom:10px">
+        <span style="border-bottom:2px solid var(--gold);padding-bottom:4px">All vehicles</span>
+        <span style="color:var(--muted)">Import custom order</span>
+      </div>
+      <div class="grid" style="grid-template-columns:1fr 1fr 1fr 1fr auto;gap:10px;align-items:end">
+        <label class="note">Make<br><div class="ph" style="height:38px;justify-content:flex-start;padding-left:10px">Any make ▾</div></label>
+        <label class="note">Model<br><div class="ph" style="height:38px;justify-content:flex-start;padding-left:10px">Any model ▾</div></label>
+        <label class="note">Budget<br><div class="ph" style="height:38px;justify-content:flex-start;padding-left:10px">KSh range ▾</div></label>
+        <label class="note">City<br><div class="ph" style="height:38px;justify-content:flex-start;padding-left:10px">Nairobi ▾</div></label>
+        <button class="btn btn-green" style="height:38px">Search</button>
+      </div>
+    </div>
+    <div class="ann" style="margin:14px 0 0;background:rgba(255,255,255,.08);border-color:var(--gold);color:#d8e6de">The search bar is the single most important element — it must render above the fold on mobile. Filters: make, model, budget, body, fuel, condition.</div>
+  </section>
+
+  <!-- ================= TRUST BAR ================= -->
+  <section style="padding:16px 34px">
+    <span class="sec-label">02 · TRUST STRIP</span>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);text-align:center;font-size:13px;color:#3a4a42">
+      <div>🛡️ <b>KEBS‑inspected</b><br><span class="note">Roadworthiness verified</span></div>
+      <div>📍 <b>Port of Mombasa</b><br><span class="note">End‑to‑end clearing</span></div>
+      <div>💳 <b>M‑Pesa & bank financing</b><br><span class="note">from 13.5% p.a.</span></div>
+      <div>🔧 <b>Aftersales & warranty</b><br><span class="note">Partner garages</span></div>
+    </div>
+  </section>
+
+  <!-- ================= SHOP BY BUDGET / BODY ================= -->
+  <section>
+    <span class="sec-label">03 · QUICK SHORTCUTS</span>
+    <h2 style="font-size:20px">Shop your way</h2>
+    <div class="row" style="margin:12px 0 18px">
+      <span class="badge" style="background:#f0ece3;color:#3a4a42">Under 1M</span>
+      <span class="badge" style="background:#f0ece3;color:#3a4a42">1–2M</span>
+      <span class="badge" style="background:#f0ece3;color:#3a4a42">2–5M</span>
+      <span class="badge" style="background:#f0ece3;color:#3a4a42">5M+</span>
+      <span class="badge" style="background:#f0ece3;color:#3a4a42">Salary‑loan friendly</span>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(6,1fr)">
+      <div class="ph" style="height:70px">SUV</div><div class="ph" style="height:70px">Sedan</div>
+      <div class="ph" style="height:70px">Hatchback</div><div class="ph" style="height:70px">Pickup</div>
+      <div class="ph" style="height:70px">Van / Bus</div><div class="ph" style="height:70px">Hybrid / EV</div>
+    </div>
+    <div class="ann">Budget + body shortcuts match how Kenyan buyers actually search (price‑first, then body type). Links straight into filtered inventory URLs for SEO.</div>
+  </section>
+
+  <!-- ================= FEATURED INVENTORY ================= -->
+  <section>
+    <span class="sec-label">04 · INVENTORY</span>
+    <div style="display:flex;justify-content:space-between;align-items:end">
+      <div><h2 style="font-size:20px">Fresh stock this week</h2><span class="note">Updated live from our yard + incoming shipments</span></div>
+      <button class="btn btn-out" style="padding:8px 14px">View all 240 vehicles</button>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:16px">
+      <!-- card x3 -->
+      <div style="border:1px solid var(--line);border-radius:12px;overflow:hidden">
+        <div class="ph" style="height:150px;border-radius:0">Car photo · 360° tag</div>
+        <div style="padding:12px">
+          <div class="row" style="justify-content:space-between"><b>2019 Toyota Harrier Z</b><span class="badge" style="background:var(--gold);color:#241a08">Fresh import</span></div>
+          <div class="note" style="margin:6px 0">48,000 km · Petrol · CVT · Nairobi</div>
+          <div style="font-weight:800;color:var(--green)">KSh 3,450,000</div>
+          <div style="font-size:11px;color:var(--muted)">or KSh 68,900/mo · 20% down</div>
+          <div class="row" style="margin-top:10px;gap:6px">
+            <button class="btn btn-green" style="padding:8px 12px;font-size:12px;flex:1">WhatsApp</button>
+            <button class="btn btn-out" style="padding:8px 12px;font-size:12px;flex:1">Details</button>
+          </div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--line);border-radius:12px;overflow:hidden">
+        <div class="ph" style="height:150px;border-radius:0">Car photo</div>
+        <div style="padding:12px">
+          <div class="row" style="justify-content:space-between"><b>2017 Toyota Probox</b><span class="badge">Local</span></div>
+          <div class="note" style="margin:6px 0">120,000 km · Petrol · Auto · Mombasa</div>
+          <div style="font-weight:800;color:var(--green)">KSh 1,190,000</div>
+          <div style="font-size:11px;color:var(--muted)">or KSh 23,700/mo</div>
+          <div class="row" style="margin-top:10px;gap:6px"><button class="btn btn-green" style="padding:8px 12px;font-size:12px;flex:1">WhatsApp</button><button class="btn btn-out" style="padding:8px 12px;font-size:12px;flex:1">Details</button></div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--line);border-radius:12px;overflow:hidden">
+        <div class="ph" style="height:150px;border-radius:0">Car photo</div>
+        <div style="padding:12px">
+          <div class="row" style="justify-content:space-between"><b>2021 Isuzu D‑Max</b><span class="badge" style="background:#b5651d">Hot</span></div>
+          <div class="note" style="margin:6px 0">35,000 km · Diesel 4WD · Pickup</div>
+          <div style="font-weight:800;color:var(--green)">KSh 4,950,000</div>
+          <div style="font-size:11px;color:var(--muted)">or KSh 98,900/mo</div>
+          <div class="row" style="margin-top:10px;gap:6px"><button class="btn btn-green" style="padding:8px 12px;font-size:12px;flex:1">WhatsApp</button><button class="btn btn-out" style="padding:8px 12px;font-size:12px;flex:1">Details</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="ann">Card shows the 3 things buyers need: price + monthly, condition badge, and a WhatsApp button (primary conversion in Kenya). "Details" opens the vehicle page. Add a "Reserve with M‑Pesa deposit" CTA.</div>
+  </section>
+
+  <!-- ================= HOW IMPORT WORKS ================= -->
+  <section style="background:var(--sand)">
+    <span class="sec-label">05 · IMPORT FUNNEL</span>
+    <h2 style="font-size:20px">Import a car in 4 steps — we handle everything</h2>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:14px">
+      <div><div class="ph" style="height:60px;width:60px;border-radius:50%">1</div><b>Choose & quote</b><p class="note">Pick a car or tell us the model. Get a full landed‑cost estimate (CIF + duty + clearing).</p></div>
+      <div><div class="ph" style="height:60px;width:60px;border-radius:50%">2</div><b>Reserve</b><p class="note">Secure the unit with an M‑Pesa deposit. We bid/buy at auction.</p></div>
+      <div><div class="ph" style="height:60px;width:60px;border-radius:50%">3</div><b>Ship & clear</b><p class="note">KEBS inspection, RoRo to Mombasa, KRA duty, NTSA registration — tracked live.</p></div>
+      <div><div class="ph" style="height:60px;width:60px;border-radius:50%">4</div><b>Drive</b><p class="note">Delivered to your doorstep, financed and insured.</p></div>
+    </div>
+    <div class="ann">This is the core differentiator vs. plain marketplaces. CTA: “Start an import order”. Include a mini landed‑cost calculator link.</div>
+  </section>
+
+  <!-- ================= FINANCING ================= -->
+  <section>
+    <span class="sec-label">06 · FINANCE</span>
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:26px;align-items:center">
+      <div>
+        <h2 style="font-size:20px">Drive now, pay monthly</h2>
+        <p class="note">Explore car financing with KCB, Equity, NCBA, Co‑op, Stanbic and DTB. Pre‑qualify online in minutes.</p>
+        <div class="row" style="margin-top:12px">
+          <span class="badge">KCB 13.5%</span><span class="badge">Equity 14.0%</span>
+          <span class="badge">NCBA 13.8%</span><span class="badge">Co‑op 13.5%</span>
+        </div>
+        <button class="btn btn-green" style="margin-top:16px">Apply for financing</button>
+      </div>
+      <div style="border:1px solid var(--line);border-radius:12px;padding:18px">
+        <b style="font-size:13px">Financing calculator</b>
+        <div class="ph" style="height:34px;margin:10px 0">Vehicle price — KSh 3,000,000</div>
+        <div class="ph" style="height:34px;margin:10px 0">Deposit 20% ──●───── 60%</div>
+        <div class="ph" style="height:34px;margin:10px 0">Term 48 months</div>
+        <div style="background:var(--green);color:#fff;border-radius:10px;padding:12px;margin-top:8px">
+          <div class="note" style="color:#a9c9b8">Estimated monthly</div>
+          <div style="font-size:26px;font-weight:800">KSh 68,900</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRACK IMPORT + TESTIMONIALS ================= -->
+  <section style="background:#12301f;color:#fff">
+    <span class="sec-label" style="color:#6f9b83">07 · TRACKER</span>
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:26px;align-items:center">
+      <div>
+        <h2 style="font-size:20px">Already importing with us?</h2>
+        <p style="color:#bcd6c8">Enter your order / chassis number to see exactly where your car is.</p>
+        <div class="row" style="margin-top:10px">
+          <div class="ph" style="height:40px;width:260px;background:rgba(255,255,255,.1);border-color:#4a6b58;color:#cfe3d8">e.g. SM‑2026‑0142</div>
+          <button class="btn btn-gold">Track</button>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;overflow:hidden">
+        <div class="ph" style="min-width:150px;height:110px;background:rgba(255,255,255,.08);border-color:#4a6b58;color:#bcd6c8">⭐⭐⭐⭐⭐<br>“Car arrived exactly as quoted.”</div>
+        <div class="ph" style="min-width:150px;height:110px;background:rgba(255,255,255,.08);border-color:#4a6b58;color:#bcd6c8">⭐⭐⭐⭐⭐<br>“Financing was painless.”</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GUIDES / BLOG ================= -->
+  <section>
+    <span class="sec-label">08 · CONTENT / SEO</span>
+    <div style="display:flex;justify-content:space-between;align-items:end">
+      <h2 style="font-size:20px">Guides & import tips</h2>
+      <button class="btn btn-out" style="padding:8px 14px">All guides</button>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:14px">
+      <div><div class="ph" style="height:110px"></div><b style="font-size:14px">How to import a car from Japan (2026)</b></div>
+      <div><div class="ph" style="height:110px"></div><b style="font-size:14px">KRA duty explained: CRSP, excise, VAT</b></div>
+      <div><div class="ph" style="height:110px"></div><b style="font-size:14px">Best fuel‑efficient cars in Kenya</b></div>
+    </div>
+    <div class="ann">Content marketing mirrors Cheki's playbook — these articles rank and feed the inventory pages.</div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer style="background:#0d241757;background:#0d2417;color:#a9c9b8;padding:28px 34px">
+    <div class="grid" style="grid-template-columns:2fr 1fr 1fr 1fr;gap:20px">
+      <div>
+        <div style="font-weight:800;color:#fff;font-size:16px">SAVANNA<span style="color:var(--gold)">MOTORS</span></div>
+        <p class="note" style="color:#7fa18d;max-width:34ch">Import · Finance · Drive. Sourcing quality vehicles from Japan, UK & Dubai for East Africa.</p>
+        <div class="row"><span class="badge" style="background:#1B4332">eCitizen</span><span class="badge" style="background:#1B4332">NTSA dealer</span><span class="badge" style="background:#1B4332">KEBS</span></div>
+      </div>
+      <div><b style="color:#fff">Buy</b><br><span class="note" style="color:#7fa18d">Inventory<br>Fresh imports<br>Financing<br>Reserve a car</span></div>
+      <div><b style="color:#fff">Import</b><br><span class="note" style="color:#7fa18d">Track order<br>Landed‑cost calc<br>Guides<br>Branches</span></div>
+      <div><b style="color:#fff">Contact</b><br><span class="note" style="color:#7fa18d">+254 700 000 000<br>WhatsApp<br>sales@savannamotors.co.ke</span></div>
+    </div>
+    <div class="note" style="color:#5f8171;margin-top:18px;border-top:1px solid #1e3d2c;padding-top:12px">© 2026 Savanna Motors EA Ltd · Privacy · Terms · Deposit & refund policy</div>
+  </footer>
+
+</div>
+</body>
+</html>

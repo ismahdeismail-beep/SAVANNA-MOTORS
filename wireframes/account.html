@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Savanna Motors — Account Dashboard Wireframe</title>
+<style>
+  :root{--green:#1B4332;--gold:#E9A23B;--sand:#F7F3EC;--ink:#14201B;--muted:#6b7a72;--line:#d9d4c8;--wire:#ece8df;--wiredash:#b9b3a6}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#e9e5db}
+  .wrap{max-width:1080px;margin:0 auto;background:#fff;box-shadow:0 8px 40px rgba(0,0,0,.12);min-height:100vh}
+  .note{font-size:11px;color:var(--muted);font-style:italic}
+  .ph{background:repeating-linear-gradient(45deg,var(--wire),var(--wire) 12px,#f3f0e9 12px,#f3f0e9 24px);border:1px dashed var(--wiredash);color:#8a8477;display:flex;align-items:center;justify-content:center;font-size:12px;border-radius:8px}
+  .ann{border-left:3px solid var(--gold);background:#fffdf7;padding:6px 10px;font-size:11.5px;color:#5c5a52;margin:8px 0;border-radius:0 6px 6px 0}
+  .btn{border-radius:999px;padding:9px 14px;font-weight:700;font-size:12px;border:0;cursor:pointer}
+  .btn-gold{background:var(--gold);color:#241a08}.btn-green{background:var(--green);color:#fff}.btn-out{background:#fff;border:1.5px solid var(--green);color:var(--green)}
+  header{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;border-bottom:1px solid var(--line)}
+  .layout{display:grid;grid-template-columns:220px 1fr;gap:22px;padding:20px 28px 40px;align-items:start}
+  .nav a{display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:#3a4a42;text-decoration:none}
+  .nav a.on{background:var(--green);color:#fff;font-weight:700}
+  .card{border:1px solid var(--line);border-radius:12px;padding:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div style="display:flex;align-items:center;gap:10px"><div class="ph" style="width:40px;height:40px;border-radius:50%">🦒</div><div style="font-weight:800;color:var(--green)">SAVANNA<span style="color:var(--gold)">MOTORS</span></div></div>
+    <nav style="display:flex;gap:20px;font-weight:600;font-size:14px;color:#3a4a42"><span>Inventory</span><span>Import a Car</span><span>Financing</span><span>Guides</span></nav>
+    <div style="display:flex;align-items:center;gap:8px"><div class="ph" style="width:34px;height:34px;border-radius:50%">JD</div><span style="font-size:13px;font-weight:600">John D.</span></div>
+  </header>
+
+  <div class="layout">
+    <aside class="nav">
+      <div class="note" style="padding-left:12px">MY ACCOUNT</div>
+      <a class="on" href="#">Dashboard</a>
+      <a href="#">My imports & orders</a>
+      <a href="#">Saved cars</a>
+      <a href="#">Saved searches</a>
+      <a href="#">Financing applications</a>
+      <a href="#">Trade‑in requests</a>
+      <a href="#">Documents</a>
+      <a href="#">Messages</a>
+      <a href="#">Profile & security</a>
+      <a href="#">Notifications</a>
+    </aside>
+
+    <main>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div><h2 style="margin:0">Karibu, John 👋</h2><span class="note">10 · Account dashboard — customer portal</span></div>
+        <button class="btn btn-outline btn-out">Log out</button>
+      </div>
+
+      <!-- ACTIVE IMPORT TRACK -->
+      <div class="card" style="margin-top:14px;background:var(--sand)">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+          <div><b>2019 Toyota Harrier Z</b><div class="note">Order SM‑2026‑0142 · ETA 12 Dec 2026</div></div>
+          <span style="background:var(--gold);color:#241a08;font-weight:700;font-size:11px;padding:3px 10px;border-radius:999px;align-self:center">In transit</span>
+        </div>
+        <div style="display:flex;gap:6px;margin-top:12px">
+          <div class="ph" style="height:8px;flex:1;background:#2D6A4F;border:0"></div>
+          <div class="ph" style="height:8px;flex:1;background:#2D6A4F;border:0"></div>
+          <div class="ph" style="height:8px;flex:1;background:#2D6A4F;border:0"></div>
+          <div class="ph" style="height:8px;flex:1;background:var(--gold);border:0"></div>
+          <div class="ph" style="height:8px;flex:1;background:#eee;border:0"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:4px"><span>Reserved</span><span>Inspected</span><span>Shipped</span><span>Clearing</span><span>Delivery</span></div>
+        <button class="btn btn-green" style="margin-top:12px">Track in detail →</button>
+      </div>
+
+      <!-- QUICK CARDS -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px">
+        <div class="card"><div class="note">Saved cars</div><div style="font-size:22px;font-weight:800;color:var(--green)">7</div><span class="note">3 with price drops</span></div>
+        <div class="card"><div class="note">Saved searches</div><div style="font-size:22px;font-weight:800;color:var(--green)">4</div><span class="note">Alerts on</span></div>
+        <div class="card"><div class="note">Financing</div><div style="font-size:22px;font-weight:800;color:var(--green)">1</div><span class="note">Pre‑approved · KSh 2.4M</span></div>
+      </div>
+
+      <!-- SAVED SEARCHES -->
+      <div class="card" style="margin-top:14px">
+        <div style="display:flex;justify-content:space-between"><b>Saved searches & alerts</b><button class="btn btn-out">Manage</button></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;padding:8px 0;border-bottom:1px dashed var(--line)"><span>Toyota Harrier, 2019+, under 4M, Nairobi</span><span class="note">🔔 SMS · 2 new</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;padding:8px 0"><span>Hybrid SUV, 2019+, under 5M</span><span class="note">🔔 WhatsApp · 5 new</span></div>
+      </div>
+
+      <!-- DOCUMENTS -->
+      <div class="card" style="margin-top:14px">
+        <b>My documents</b>
+        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px dashed var(--line)"><span>Pro‑forma invoice · SM‑2026‑0142</span><span class="note">⬇ PDF</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px dashed var(--line)"><span>Auction sheet</span><span class="note">⬇ PDF</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0"><span>Payment receipts</span><span class="note">⬇ PDF</span></div>
+      </div>
+
+      <div class="ann">Logged‑in portal: import tracking, saved cars/searches with SMS/WhatsApp alerts, finance applications, trade‑ins, documents and messages — the retention layer that keeps buyers coming back (Autochek‑style full‑service loop).</div>
+    </main>
+  </div>
+</div>
+</body>
+</html>
