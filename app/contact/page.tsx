@@ -4,8 +4,6 @@ import { useState } from "react"
 import Link from "next/link"
 import { Container } from "@/components/container"
 
-export const metadata = { title: "Contact — Savanna Motors" }
-
 export default function ContactPage() {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState<string | null>(null)
