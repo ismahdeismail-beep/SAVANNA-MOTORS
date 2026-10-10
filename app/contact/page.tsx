@@ -4,15 +4,9 @@ import { Container } from "@/components/container"
 
 export const metadata = { title: "Contact — Savanna Motors" }
 
-const successMessages = [
-  "Thank you! We'll get back to you within 24 hours.",
-  "Your message has been received. A team member will contact you soon.",
-  "Thanks for reaching out. We'll review your inquiry and email you back.",
-]
-
 export default function ContactPage() {
   const [loading, setLoading] = useState(false)
-  const [success, setSuccess] = useState(false)
+  const [success, setSuccess] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -34,13 +28,14 @@ export default function ContactPage() {
 
       const data = await res.json()
 
-      if (res.ok) {
+      if (res.ok && data.success) {
         setSuccess(
-          successMessages[Math.floor(Math.random() * successMessages.length)]
+          "Thank you! Your message has been received. We'll get back to you soon."
         )
         ;(e.target as HTMLFormElement).reset()
       } else {
-        setError(data.error || "Submission failed. Please try again.")
+        const errMsg = data.error || "Submission failed. Please try again."
+        setError(errMsg)
       }
     } catch (err) {
       setError("Network error. Please check your connection and try again.")
@@ -57,13 +52,13 @@ export default function ContactPage() {
         </h1>
 
         {error && (
-          <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md mb-6 animate-shake">
+          <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md mb-6">
             <p className="text-sm">{error}</p>
           </div>
         )}
 
         {success && (
-          <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-md mb-6 animate-bounce">
+          <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-md mb-6">
             <p className="text-sm">{success}</p>
           </div>
         )}
@@ -82,7 +77,6 @@ export default function ContactPage() {
               required
               className="field w-full"
               placeholder="Your full name"
-              value=""
             />
           </div>
 
@@ -96,7 +90,6 @@ export default function ContactPage() {
               required
               className="field w-full"
               placeholder="your@email.com"
-              value=""
             />
           </div>
 
@@ -110,17 +103,13 @@ export default function ContactPage() {
               required
               className="field w-full min-h-[120px]"
               placeholder="How can we help you?"
-              value=""
             ></textarea>
           </div>
 
           <div>
             <button
               type="submit"
-              className={cn(
-                "btn btn-green w-full",
-                loading && "opacity-80 cursor-not-allowed"
-              )}
+              className="btn btn-green w-full"
               disabled={loading}
             >
               {loading ? "Sending…" : "Send Message"}
@@ -137,7 +126,6 @@ export default function ContactPage() {
               >Email</a
             >
           </p>
-        </p>
         </p>
         </div>
       </Container>
