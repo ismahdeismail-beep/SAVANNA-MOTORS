@@ -59,10 +59,10 @@ export function SiteHeader() {
 
           <button
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-lg border border-sand-300 lg:hidden"
+            className="grid h-12 w-12 place-items-center rounded-lg border border-sand-300 lg:hidden focus-inset-focus focus-ring-2 focus-ring-savanna-200"
             aria-label="Menu"
           >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </Container>
 
@@ -79,9 +79,9 @@ export function SiteHeader() {
                   {n.label}
                 </Link>
               ))}
-              <div className="flex gap-2 py-3">
-                <Link href="/account" className="btn btn-out btn-sm flex-1">Login</Link>
-                <Link href="/inventory" className="btn btn-gold btn-sm flex-1">Test drive</Link>
+              <div className="space-y-2 px-2">
+                <Link href="/account" className="btn btn-out w-full sm:btn-sm">Login</Link>
+                <Link href="/inventory" className="btn btn-gold w-full sm:btn-sm">Test drive</Link>
               </div>
             </Container>
           </div>
