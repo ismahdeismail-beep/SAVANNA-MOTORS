@@ -48,8 +48,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="car-ph lg:block aspect-square rounded-3xl bg-savanna-50 flex items-center justify-center">
-            <span className="text-4xl text-savanna-300">🚗</span>
+          <div className="car-ph w-full h-48 rounded-md bg-savanna-50 flex items-center justify-center mb-4">
+            <span className="text-3xl text-savanna-300">🚗</span>
           </div>
         </Container>
 
