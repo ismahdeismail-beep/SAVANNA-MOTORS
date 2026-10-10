@@ -21,17 +21,17 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO */}
+{/* HERO */}
       <section className="bg-gradient-to-br from-savanna-950 via-savanna-800 to-savanna-600 text-white">
-        <Container className="grid gap-10 py-14 lg:grid-cols-[1.05fr_1fr] lg:items-center">
-          <div>
+        <Container className="grid gap-6 py-12 md:grid-cols-1 lg:grid-cols-2 gap-x-8 items-center">
+          <div className="animate-fade-in-up">
             <span className="text-xs font-bold uppercase tracking-[0.14em] text-gold-400">
               Fresh imports · Certified · Financed
             </span>
             <h1 className="mt-3 font-display text-4xl font-extrabold leading-tight sm:text-5xl">
               Your next car, straight from the source.
             </h1>
-            <p className="mt-4 max-w-[46ch] text-savanna-200">
+            <p className="mt-4 max-w-[52ch] text-savanna-200">
               We source, ship, clear and register quality vehicles from Japan, the UK and Dubai — delivered
               to your door across East Africa. Transparent landed cost, no surprises.
             </p>
@@ -48,11 +48,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          <img
-            src="/cars/hero.jpg"
-            alt="Savanna Motors import"
-            className="hidden h-72 w-full rounded-3xl object-cover lg:block"
-          />
+          <div className="car-ph lg:block aspect-square rounded-3xl bg-savanna-50 flex items-center justify-center">
+            <span className="text-4xl text-savanna-300">🚗</span>
+          </div>
         </Container>
 
         <Container className="pb-12">
