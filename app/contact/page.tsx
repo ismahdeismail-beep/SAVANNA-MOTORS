@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react"
 import Link from "next/link"
 import { Container } from "@/components/container"
@@ -126,7 +128,6 @@ export default function ContactPage() {
               >Email</a
             >
           </p>
-        </p>
         </div>
       </Container>
     </div>
