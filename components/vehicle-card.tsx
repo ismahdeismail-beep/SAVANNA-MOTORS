@@ -13,7 +13,7 @@ const conditionStyle: Record<Vehicle["condition"], string> = {
 export function VehicleCard({ v, className }: { v: Vehicle; className?: string }) {
   const monthly = v.price ? monthlyPayment(v.price, 20, 48, 13.5) : null;
   return (
-    <div className={cn("card group overflow-hidden", className)}>
+    <div className={cn("card group overflow-hidden group-hover:shadow-lift", className)}>
       <Link href={`/vehicle/${v.id}`} className="block">
         <div className="relative h-40 w-full overflow-hidden bg-sand-200">
           <img

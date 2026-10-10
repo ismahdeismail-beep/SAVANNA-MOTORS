@@ -81,6 +81,22 @@ body {
     transform: translateX(0);
   }
 }
+/* =========== PAGE TRANSITION ANIMATIONS =========== */
+@keyframes page-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* When Next.js navigates, it adds data-page="visiting" to <html>,
+   then changes to data-page="cached" (or removes) after the page loads.
+   We use these classes to fade the whole page in/out.
+*/
+html[data-page="visiting"] > * { animation: page-fade-out 300ms ease-in-out forwards; }
+html[data-page="cached"] > * { animation: page-fade-in 300ms ease-out forwards; }
 
 /* Apply animations via utilities */
 .animate-fade-in-up { animation: fade-in-up 0.5s ease-out forwards; }
