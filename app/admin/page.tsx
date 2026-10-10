@@ -1,24 +1,45 @@
 import Link from "next/link"
 import { Container } from "@/components/container"
+import { createServerClient } from "@/lib/supabase"
 import { vehicles, getVehicle } from "@/lib/data"
 
 export const metadata = { title: "Admin — Savanna Motors" }
 
 const nav = ["Overview", "Inventory", "Import Orders", "Finance Apps", "Leads / CRM", "Blog", "Settings"]
 
-const kpis = [
-  ["Vehicles live", "128", "+6 this week"],
-  ["Import orders", "42", "9 in transit"],
-  ["Finance apps", "17", "5 pending decision"],
-  ["Leads (30 days)", "214", "38% conversion"],
-]
+async function getKpis() {
+  const supa = createServerClient()
+  const { data, error } = await supa.from("kpis").select("*").limit(4).order("created_at", { ascending: false })
+  if (error) return [
+    ["Vehicles live", "128", "+6 this week"],
+    ["Import orders", "42", "9 in transit"],
+    ["Finance apps", "17", "5 pending decision"],
+    ["Leads (30 days)", "214", "38% conversion"],
+  ]
+  return data || [
+    ["Vehicles live", "128", "+6 this week"],
+    ["Import orders", "42", "9 in transit"],
+    ["Finance apps", "17", "5 pending decision"],
+    ["Leads (30 days)", "214", "38% conversion"],
+  ]
+}
 
-const recentOrders = [
-  ["SM-2026-0142", "2019 Toyota Harrier Z", "Peter Mwangi", "In transit"],
-  ["SM-2026-0139", "2021 Mazda CX-5", "Grace Otieno", "Clearing"],
-  ["SM-2026-0131", "2020 Subaru Forester", "Ali Hassan", "Delivered"],
-  ["SM-2026-0128", "2020 Nissan X-Trail", "Diana K.", "Inspection"],
-]
+async function getRecentOrders() {
+  const supa = createServerClient()
+  const { data, error } = await supa.from("import_orders").select("*").order("created_at", { ascending: false }).limit(4)
+  if (error) return [
+    ["SM-2026-0142", "2019 Toyota Harrier Z", "Peter Mwangi", "In transit"],
+    ["SM-2026-0139", "2021 Mazda CX-5", "Grace Otieno", "Clearing"],
+    ["SM-2026-0131", "2020 Subaru Forester", "Ali Hassan", "Delivered"],
+    ["SM-2026-0128", "2020 Nissan X-Trail", "Diana K.", "Inspection"],
+  ]
+  return data || [
+    ["SM-2026-0142", "2019 Toyota Harrier Z", "Peter Mwangi", "In transit"],
+    ["SM-2026-0139", "2021 Mazda CX-5", "Grace Otieno", "Clearing"],
+    ["SM-2026-0131", "2020 Subaru Forester", "Ali Hassan", "Delivered"],
+    ["SM-2026-0128", "2020 Nissan X-Trail", "Diana K.", "Inspection"],
+  ]
+}
 
 export default function AdminPage() {
   return (
@@ -38,7 +59,7 @@ export default function AdminPage() {
         <div>
           <h1 className="font-display text-3xl font-extrabold">Overview</h1>
           <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {kpis.map(([k, v, s]) => (
+            {await getKpis().then(kpis => kpis.map(([k, v, s]) => (
               <div key={k} className="card p-5">
                 <div className="label">{k}</div>
                 <div className="font-display text-2xl font-extrabold text-savanna-800">{v}</div>
@@ -59,7 +80,7 @@ export default function AdminPage() {
                 </tr>
               </thead>
               <tbody>
-                {recentOrders.map(([o, v, c, s]) => (
+                {await getRecentOrders().then(orders => orders.map(([o, v, c, s]) => (
                   <tr key={o} className="border-t border-sand-200">
                     <td className="py-2 font-semibold">{o}</td>
                     <td>{v}</td>
@@ -91,8 +112,8 @@ export default function AdminPage() {
               <button className="btn btn-gold btn-md mt-2 w-full">Update & notify customer</button>
             </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </div>
   )
 }
