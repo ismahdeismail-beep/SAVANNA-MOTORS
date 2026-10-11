@@ -7,9 +7,7 @@
   --font-manrope: "Manrope", system-ui, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   @apply bg-sand-100 text-ink font-sans antialiased;
@@ -28,9 +26,7 @@ body {
   .btn-green { @apply bg-savanna-800 text-white hover:bg-savanna-700; }
   .btn-out { @apply border-[1.5px] border-savanna-800 text-savanna-800 bg-white hover:bg-savanna-50; }
   .btn-ghost { @apply text-savanna-800 hover:bg-savanna-50; }
-  .badge {
-    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold;
-  }
+  .badge { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold; }
   .card { @apply rounded-2xl border border-sand-300 bg-white shadow-card; }
   .field {
     @apply w-full rounded-xl border border-sand-300 bg-white px-3.5 py-2.5 text-sm
@@ -39,43 +35,8 @@ body {
   }
   .label { @apply text-xs font-semibold text-muted; }
   .link { @apply text-savanna-700 font-semibold hover:text-savanna-800; }
-}
-
-@layer utilities {
-  .touch-target { @apply min-h-[44px] min-w-[44px]; }
-  .container-fluid { @apply px-4 md:px-6 lg:px-8 max-w-[1400px] mx-auto; }
-}
-
-@layer base {
-  html { scroll-behavior: smooth; }
-  body { @apply bg-sand-100 text-ink font-sans antialiased; }
-  * { @apply border-sand-200; }
-  img { @apply max-w-full h-auto; }
-  a { @apply transition-colors duration-200; }
-}
-
-@layer components {
-  .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold transition
-           focus:outline-none focus-visible:shadow-ring disabled:opacity-50
-           min-h-[44px] min-w-[44px];
-  }
-  .btn-sm { @apply px-4 py-2.5 text-sm; }
-  .btn-md { @apply px-5 py-3 text-sm; }
-  .btn-lg { @apply px-6 py-4 text-base; }
-  .btn-gold { @apply bg-gold-400 text-gold-900 hover:bg-gold-300; }
-  .btn-green { @apply bg-savanna-800 text-white hover:bg-savanna-700; }
-  .btn-out { @apply border-[1.5px] border-savanna-800 text-savanna-800 bg-white hover:bg-savanna-50; }
-  .btn-ghost { @apply text-savanna-800 hover:bg-savanna-50; }
-  .badge {
-    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold;
-  }
   .card { @apply rounded-2xl border border-sand-300 bg-white shadow-card; }
-  .field {
-    @apply w-full rounded-xl border border-sand-300 bg-white px-3.5 py-2.5 text-sm
-           placeholder:text-muted focus:border-savanna-500 focus:outline-none focus:ring-2 focus:ring-savanna-200
-           min-h-[44px];
-  }
+  .field { @apply w-full rounded-xl border border-sand-300 bg-white px-3.5 py-2.5 text-sm placeholder:text-muted focus:border-savanna-500 focus:outline-none focus:ring-2 focus:ring-savanna-200 min-h-[44px]; }
   .label { @apply text-xs font-semibold text-muted; }
   .link { @apply text-savanna-700 font-semibold hover:text-savanna-800; }
 }
@@ -100,33 +61,18 @@ body {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes slide-in-from-left {
-  from { opacity: 0; transform: translateX(-12px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-@keyframes page-fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-@keyframes page-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slide-in-from-left { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes page-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes page-fade-in { from { opacity: 0; } to { opacity: 1; } }
 
-/* Page transition animations */
 html[data-page="visiting"] > * { animation: page-fade-out 300ms ease-in-out forwards; }
 html[data-page="cached"] > * { animation: page-fade-in 300ms ease-out forwards; }
 
-/* Apply animations via utilities */
 .animate-fade-in-up { animation: fade-in-up 0.5s ease-out forwards; }
 .animate-fade-in { animation: fade-in 0.4s ease-out forwards 0.1s; }
 .animate-slide-in-from-left { animation: slide-in-from-left 0.4s ease-out forwards 0.1s; }
 
-/* Wireframe-inspired car placeholder */
 .car-ph {
   background-image: linear-gradient(135deg, #245640, #12301f);
   position: relative;
@@ -143,28 +89,17 @@ html[data-page="cached"] > * { animation: page-fade-in 300ms ease-out forwards; 
 }
 .car-ph.light { background-image: linear-gradient(135deg, #dcece1, #bcd9c6); }
 
-/* Page transition animations */
 @keyframes page-fade-out { from { opacity: 1; } to { opacity: 0; } }
 @keyframes page-fade-in { from { opacity: 0; } to { opacity: 1; } }
 html[data-page="visiting"] > * { animation: page-fade-out 300ms ease-in-out forwards; }
 html[data-page="cached"] > * { animation: page-fade-in 300ms ease-out forwards; }
 
-/* Focus visible styles */
-.focus-visible-ring { @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-savanna-500 focus-visible:ring-offset-2; }
-
-/* Touch target improvements */
 @media (max-width: 768px) {
   .btn { @apply min-h-[48px] min-w-[48px]; }
   .field { @apply min-h-[48px]; }
   a.btn, button.btn { @apply min-h-[48px] min-w-[48px]; }
 }
 
-/* Focus visible ring */
-.focus-visible-ring {
-  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-savanna-500 focus-visible:ring-offset-2;
-}
-
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -174,7 +109,6 @@ html[data-page="cached"] > * { animation: page-fade-in 300ms ease-out forwards; 
   }
 }
 
-/* Print styles */
 @media print {
   .no-print { display: none !important; }
   .btn { @apply border border-savanna-800 text-savanna-800 bg-white !important; }

@@ -46,9 +46,7 @@ export function SiteHeader() {
 
           <nav className="hidden items-center gap-6 text-sm font-semibold text-savanna-900 lg:flex">
             {nav.map((n) => (
-              <Link key={n.href} href={n.href} className="hover:text-savanna-600">
-                {n.label}
-              </Link>
+              <Link key={n.href} href={n.href} className="hover:text-savanna-600">{n.label}</Link>
             ))}
           </nav>
 
@@ -57,11 +55,7 @@ export function SiteHeader() {
             <Link href="/inventory" className="btn btn-gold btn-sm">Book test drive</Link>
           </div>
 
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="grid h-12 w-12 place-items-center rounded-lg border border-sand-300 lg:hidden focus-inset-focus focus-ring-2 focus-ring-savanna-200"
-            aria-label="Menu"
-          >
+          <button onClick={() => setOpen((v) => !v)} className="grid h-12 w-12 place-items-center rounded-lg border border-sand-300 lg:hidden focus-visible-ring" aria-label="Menu">
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </Container>
@@ -70,12 +64,7 @@ export function SiteHeader() {
           <div className="border-t border-sand-300 bg-white lg:hidden">
             <Container className="flex flex-col py-2">
               {nav.map((n) => (
-                <Link
-                  key={n.href}
-                  href={n.href}
-                  onClick={() => setOpen(false)}
-                  className="border-b border-sand-200 py-3 text-sm font-semibold last:border-0"
-                >
+                <Link key={n.href} href={n.href} onClick={() => setOpen(false)} className="border-b border-sand-200 py-3 text-sm font-semibold last:border-0">
                   {n.label}
                 </Link>
               ))}

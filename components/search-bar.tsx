@@ -3,14 +3,7 @@ import { makes, cities, bodies } from "@/lib/data";
 
 export function SearchBar({ light = false }: { light?: boolean }) {
   return (
-    <form
-      action="/inventory"
-      className={
-        light
-          ? "rounded-2xl bg-white p-3 shadow-lift"
-          : "card p-3"
-      }
-    >
+    <form action="/inventory" className={light ? "rounded-2xl bg-white p-3 shadow-lift" : "card p-3"}>
       <div className="grid gap-3 md:grid-cols-[1fr_1fr_1fr_auto]">
         <label className="block">
           <span className="label">Make</span>
@@ -34,9 +27,7 @@ export function SearchBar({ light = false }: { light?: boolean }) {
           </select>
         </label>
         <div className="flex items-end">
-          <button className="btn btn-green btn-md w-full md:w-auto">
-            <Search className="h-4 w-4" /> Search
-          </button>
+          <button className="btn btn-green btn-md w-full md:w-auto"><Search className="h-4 w-4" /> Search</button>
         </div>
       </div>
     </form>
