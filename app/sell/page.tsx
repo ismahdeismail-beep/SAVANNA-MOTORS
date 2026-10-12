@@ -1,4 +1,5 @@
 import { Container } from "@/components/container";
+import { LeadForm } from "@/components/lead-form";
 
 export const metadata = { title: "Sell / Trade-in — Savanna Motors" };
 
@@ -8,7 +9,7 @@ const options = [
   { icon: "🏷️", t: "Sell on consignment", d: "We list, show and sell it from our yard for a fee." },
 ];
 
-const next = [
+const nextSteps = [
   "Submit details & photos",
   "We call / WhatsApp to book inspection",
   "Free physical inspection (Nairobi / Mombasa)",
@@ -32,8 +33,8 @@ export default function SellPage() {
       <section className="py-12">
         <Container className="grid gap-5 md:grid-cols-3">
           {options.map((o) => (
-            <div key={o.t} className="card p-5">
-              <div className="text-3xl">{o.icon}</div>
+            <div key={o.t} className="card-hover p-5">
+              <div className="text-3xl mb-2">{o.icon}</div>
               <h3 className="mt-2 font-display text-lg font-extrabold">{o.t}</h3>
               <p className="mt-1 text-sm text-muted">{o.d}</p>
             </div>
@@ -41,37 +42,36 @@ export default function SellPage() {
         </Container>
       </section>
 
-      <section className="bg-sand-100 py-12">
+      <section className="bg-sand-50 py-12">
         <Container className="grid gap-8 lg:grid-cols-2 lg:items-start">
           <div>
             <h2 className="font-display text-2xl font-extrabold">Request a valuation</h2>
-            <form className="mt-5 space-y-3">
+            <LeadForm submitLabel="Get my free valuation">
               <div className="grid grid-cols-2 gap-3">
-                <input className="field" placeholder="Make" />
-                <input className="field" placeholder="Model" />
+                <input className="field" name="make" placeholder="Make" />
+                <input className="field" name="model" placeholder="Model" />
               </div>
               <div className="grid grid-cols-2 gap-3">
-                <input className="field" placeholder="Year" />
-                <input className="field" placeholder="Mileage (km)" />
+                <input className="field" name="year" placeholder="Year" />
+                <input className="field" name="mileage" placeholder="Mileage (km)" />
               </div>
-              <input className="field" placeholder="Reg / chassis no." />
-              <input className="field" placeholder="Your phone (WhatsApp)" />
+              <input className="field" name="chassis" placeholder="Reg / chassis no." />
+              <input className="field" name="phone" type="tel" required placeholder="Your phone (WhatsApp)" />
               <div className="grid grid-cols-5 gap-2">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <label key={i} className="grid h-16 cursor-pointer place-items-center rounded-xl border border-dashed border-sand-400 text-muted">
+                  <label key={i} className="grid h-16 cursor-pointer place-items-center rounded-xl border border-dashed border-sand-300 text-muted">
                     {i === 0 ? "＋" : ""}
                   </label>
                 ))}
               </div>
-              <textarea className="field min-h-[80px]" placeholder="Condition notes, service history, accident disclosure…" />
-              <button type="button" className="btn btn-green btn-lg w-full">Get my free valuation</button>
-            </form>
+              <textarea className="field min-h-[80px]" name="message" placeholder="Condition notes, service history, accident disclosure…" />
+            </LeadForm>
           </div>
 
           <div className="card p-6">
             <h3 className="font-display text-lg font-extrabold">What happens next</h3>
             <ol className="mt-4 space-y-2 text-sm">
-              {next.map((s, i) => (
+              {nextSteps.map((s, i) => (
                 <li key={s} className="flex gap-2"><span className="font-bold text-savanna-700">{i + 1}.</span>{s}</li>
               ))}
             </ol>

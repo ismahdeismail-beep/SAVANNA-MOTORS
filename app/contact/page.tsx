@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Container } from "@/components/container";
+import { Mail, Phone, MapPin, MessageCircle, Send } from "lucide-react";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
@@ -27,22 +28,61 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="py-8">
+    <div className="py-12">
       <Container>
-        <h1 className="font-display text-3xl font-extrabold text-center mb-8">Get in Touch</h1>
-        {error && <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md mb-6"><p className="text-sm">{error}</p></div>}
-        {success && <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-md mb-6"><p className="text-sm">{success}</p></div>}
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4 p-6 rounded-2xl bg-sand-100 border border-sand-300">
-          <div><label className="block text-sm font-semibold text-savanna-800 mb-1">Name</label>
-            <input type="text" name="name" required className="field w-full" placeholder="Your full name" /></div>
-          <div><label className="block text-sm font-semibold text-savanna-800 mb-1">Email</label>
-            <input type="email" name="email" required className="field w-full" placeholder="your@email.com" /></div>
-          <div><label className="block text-sm font-semibold text-savanna-800 mb-1">Message</label>
-            <textarea name="message" rows={4} required className="field w-full min-h-[120px]" placeholder="How can we help you?" /></div>
-          <button type="submit" className="btn btn-green w-full" disabled={loading}>{loading ? "Sending…" : "Send Message"}</button>
-        </form>
-        <div className="mt-6 text-center text-sm text-muted"><p>Preferred contact methods:<br />
-          <a href="https://wa.me/254700000000" className="link" target="_blank">WhatsApp (primary)</a> · <a href="mailto:sales@savannamotors.co.ke" className="link">Email</a></p></div>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="font-display text-3xl md:text-4xl font-extrabold mb-4">Get in Touch</h1>
+            <p className="text-muted text-lg max-w-2xl mx-auto">Have questions about importing, financing, or selling? Our team is ready to help.</p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 mb-12">
+            <div className="card-hover p-6 text-center group">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-savanna-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <MessageCircle className="h-8 w-8 text-savanna-700" />
+              </div>
+              <h3 className="font-display text-xl font-extrabold mb-2">WhatsApp (Primary)</h3>
+              <p className="text-muted mb-4">Fastest response — chat directly with our team.</p>
+              <a href="https://wa.me/254700000000" target="_blank" className="btn btn-gold w-full inline-flex items-center justify-center gap-2">
+                <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
+              </a>
+            </div>
+            <div className="card-hover p-6 text-center group">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-savanna-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <Mail className="h-8 w-8 text-savanna-700" />
+              </div>
+              <h3 className="font-display text-xl font-extrabold mb-2">Email Us</h3>
+              <p className="text-muted mb-4">We'll respond within 24 hours.</p>
+              <a href="mailto:sales@savannamotors.co.ke" className="btn btn-out w-full inline-flex items-center justify-center gap-2">
+                <Mail className="h-5 w-5" /> Email Us
+              </a>
+            </div>
+            <div className="card-hover p-6 text-center group md:col-span-2">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-savanna-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <Phone className="h-8 w-8 text-savanna-700" />
+              </div>
+              <h3 className="font-display text-xl font-extrabold mb-2">Call Us</h3>
+              <p className="text-muted mb-4">Mon–Sat 8am–6pm · Sun 10am–4pm</p>
+              <a href="tel:+254700000000" className="btn btn-green w-full inline-flex items-center justify-center gap-2">
+                <Phone className="h-5 w-5" /> Call +254 700 000 000
+              </a>
+            </div>
+          </div>
+
+          <div className="card bg-sand-50 p-6">
+            <h2 className="font-display text-2xl font-extrabold mb-6 text-center">Or send us a message</h2>
+            {error && <div className="bg-red-50 border-l-4 border-red-500 text-red-700 p-4 rounded-md mb-6"><p className="text-sm">{error}</p></div>}
+            {success && <div className="bg-green-50 border-l-4 border-green-500 text-green-700 p-4 rounded-md mb-6"><p className="text-sm">{success}</p></div>}
+            <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
+              <div className="grid gap-4 md:grid-cols-2">
+                <div><label className="label">Name</label><input type="text" name="name" required className="field" placeholder="Your full name" /></div>
+                <div><label className="label">Email</label><input type="email" name="email" required className="field" placeholder="your@email.com" /></div>
+              </div>
+              <div><label className="label">Message</label><textarea name="message" rows={5} required className="field min-h-[140px]" placeholder="How can we help you?" /></div>
+              <button type="submit" className="btn btn-green w-full py-3" disabled={loading}>{loading ? "Sending…" : "Send Message"}</button>
+            </form>
+          </div>
+        </div>
       </Container>
     </div>
   );

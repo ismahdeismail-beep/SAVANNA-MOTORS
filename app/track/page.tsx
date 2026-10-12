@@ -25,7 +25,7 @@ export default function TrackPage() {
           <h1 className="mt-2 font-display text-3xl font-extrabold">Track your import</h1>
           <p className="mt-2 text-savanna-200">Enter your order number, or log in to see live shipment progress.</p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <input className="field w-72 border-white/20 bg-white/10 text-white placeholder:text-savanna-300/70" placeholder="Order no. e.g. SM-2026-0142" defaultValue="SM-2026-0142" />
+            <input className="field w-64 md:w-80 bg-white/10 border-white/20 text-white placeholder:text-savanna-300/70" placeholder="Order no. e.g. SM-2026-0142" defaultValue="SM-2026-0142" />
             <button className="btn btn-gold btn-md">Track</button>
           </div>
         </Container>
@@ -33,33 +33,26 @@ export default function TrackPage() {
 
       <section className="py-10">
         <Container>
-          <div className="card grid gap-4 p-5 sm:grid-cols-3 lg:grid-cols-5">
-            {[
-              ["Order", "SM-2026-0142"],
-              ["Vehicle", "2019 Toyota Harrier Z"],
-              ["Chassis", "ZSU60-xxxxxxx"],
-              ["Est. arrival", "12 Dec 2026"],
-            ].map(([k, v]) => (
-              <div key={k}><div className="label">{k}</div><b className="text-sm">{v}</b></div>
-            ))}
-            <div>
-              <div className="label">Status</div>
-              <span className="badge bg-gold-400 text-gold-900">In transit</span>
-            </div>
+          <div className="card grid gap-4 p-5 sm:grid-cols-3 lg:grid-cols-5 mb-6">
+            <div><div className="label">Order</div><b className="text-sm">SM-2026-0142</b></div>
+            <div><div className="label">Vehicle</div><b className="text-sm">2019 Toyota Harrier Z</b></div>
+            <div><div className="label">Chassis</div><b className="text-sm">ZSU60-xxxxxxx</b></div>
+            <div><div className="label">Est. arrival</div><b className="text-sm">12 Dec 2026</b></div>
+            <div><div className="label">Status</div><span className="badge bg-gold-400 text-gold-900">In transit</span></div>
           </div>
 
-          <div className="mt-6 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-start">
+          <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-start">
             <div className="card p-6">
-              <h2 className="font-display text-lg font-extrabold">Progress</h2>
-              <ol className="mt-5 space-y-1">
+              <h2 className="font-display text-lg font-extrabold mb-6">Progress</h2>
+              <ol className="space-y-1">
                 {milestones.map((m, i) => (
                   <li key={m.t} className="flex gap-4">
                     <div className="flex flex-col items-center">
                       <span className={cn(
                         "grid h-8 w-8 shrink-0 place-items-center rounded-full text-xs font-bold",
                         m.state === "done" && "bg-savanna-800 text-white",
-                        m.state === "active" && "bg-gold-400 text-gold-900 shadow-ring",
-                        m.state === "todo" && "border border-dashed border-sand-400 text-muted"
+                        m.state === "active" && "bg-gold-400 text-gold-900 shadow-[0_0_0_4px_rgba(233,162,59,0.3)]",
+                        m.state === "todo" && "border border-dashed border-sand-300 text-muted"
                       )}>
                         {m.state === "done" ? <Check className="h-4 w-4" /> : i + 1}
                       </span>
@@ -77,14 +70,14 @@ export default function TrackPage() {
             <aside className="space-y-4">
               <div className="card p-4">
                 <b className="text-sm">Live location</b>
-                <div className="mt-2 grid h-40 place-items-center rounded-xl border border-dashed border-sand-400 text-xs text-muted">
+                <div className="mt-2 grid h-40 place-items-center rounded-xl border border-dashed border-sand-300 text-xs text-muted">
                   Map · vessel position on route
                 </div>
               </div>
               <div className="card p-4">
                 <b className="text-sm">Documents</b>
                 {docs.map((d) => (
-                  <div key={d} className="flex justify-between border-b border-dashed border-sand-300 py-2 text-sm last:border-0">
+                  <div key={d} className="flex justify-between border-b border-dashed border-sand-200 py-2 text-sm last:border-0">
                     <span>{d}</span><span className="link">⬇ PDF</span>
                   </div>
                 ))}
