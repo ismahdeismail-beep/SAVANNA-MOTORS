@@ -42,8 +42,7 @@ app/
 ├── layout.tsx                 # Root layout with fonts, header, footer
 ├── page.tsx                   # Homepage (hero, search, trust, featured cars)
 ├── globals.css                # Tailwind + custom animations + design system
-├── inventory/page.tsx         # Filterable car listings
-├── buy/page.tsx               # Purchase-focused inventory
+├── inventory/page.tsx         # Filterable car listings (also serves the legacy /buy URL)
 ├── vehicle/[id]/page.tsx      # Vehicle detail + gallery + finance calc
 ├── import/page.tsx            # Import funnel + landed-cost calculator
 ├── financing/page.tsx         # Loan calculator + partner banks
@@ -116,8 +115,7 @@ public/cars/                   # 17 real car photos (Wikimedia Commons)
 | Route | Description |
 |-------|-------------|
 | `/` | Homepage — hero, search, trust badges, featured cars, import steps, financing teaser |
-| `/inventory` | Full listings with make/body/city/condition filters |
-| `/buy` | Purchase-focused inventory with CTA to sell |
+| `/inventory` | Full listings with make/body/city/condition filters (the old `/buy` URL 301s here) |
 | `/vehicle/[id]` | Detail page — gallery, specs, landed cost, finance, WhatsApp/deposit CTAs |
 | `/import` | 6-step import funnel, source markets, landed-cost calculator |
 | `/financing` | Loan calculator, partner banks (KCB, Equity, NCBA, etc.), pre-qualify |
@@ -268,7 +266,7 @@ npm run lint      # ESLint check
 
 | Feature | Status |
 |---------|--------|
-| 13 Routes | ✅ All 200 OK |
+| 13 Routes | ✅ All 200 OK (`/buy` → 301 → `/inventory`) |
 | Mobile Responsive | ✅ |
 | Animations | ✅ (page fade, hover lift, fade-in) |
 | Real Car Images | ✅ 17 Wikimedia photos |
