@@ -28,17 +28,24 @@ export default async function InventoryPage({ searchParams }: { searchParams: SP
   );
 
   return (
-    <div className="py-8">
-      <Container>
-        <nav className="text-xs text-muted mb-6">
-          <Link href="/" className="hover:text-savanna-700">Home</Link> › Inventory
-          {make && <span className="mx-1">›</span>}
-          {make && <span className="font-semibold text-savanna-800">{make}</span>}
-        </nav>
+    <>
+      <section className="bg-savanna-950 text-white">
+        <div className="relative">
+          <img src="/cars/toyota-rav4-hybrid-2021.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-25" fetchPriority="high" />
+          <div className="absolute inset-0 bg-gradient-to-r from-savanna-950 via-savanna-950/85 to-savanna-950/50" />
+          <Container className="relative py-10 md:py-14">
+            <nav className="text-xs text-savanna-300/80">
+              <Link href="/" className="hover:text-white">Home</Link> › Inventory
+              {make && <span className="mx-1">›</span>}
+              {make && <span className="font-semibold text-white">{make}</span>}
+            </nav>
+            <h1 className="mt-3 font-display text-3xl font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-4xl">Cars for sale in Kenya</h1>
+            <p className="mt-2 text-sm text-savanna-200/85">{filtered.length} vehicles · fresh imports, locally used & in transit</p>
+          </Container>
+        </div>
+      </section>
 
-        <h1 className="font-display text-2xl md:text-3xl font-extrabold mb-2">Cars for sale in Kenya</h1>
-        <p className="text-sm text-muted mb-6">{filtered.length} vehicles · fresh imports, locally used & in transit</p>
-
+      <Container className="py-8">
         <SearchBar />
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[260px_1fr] lg:items-start">
@@ -66,7 +73,7 @@ export default async function InventoryPage({ searchParams }: { searchParams: SP
           </div>
         </div>
       </Container>
-    </div>
+    </>
   );
 }
 

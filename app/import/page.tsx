@@ -31,15 +31,21 @@ export default function ImportPage() {
   return (
     <>
       <section className="bg-savanna-950 text-white">
-        <Container className="py-14 md:py-20">
-          <p className="eyebrow">Import a Car</p>
-          <h1 className="mt-3 max-w-[22ch] font-display text-3xl font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-4xl md:text-5xl">
-            Can&apos;t find it? We&apos;ll import it for you.
-          </h1>
-          <p className="mt-4 max-w-[64ch] text-savanna-200/85">
-            Tell us the exact make, model, year and budget. We source from Japanese, UK and Dubai auctions, handle KEBS inspection, freight, KRA duty, clearing and NTSA registration — then deliver to your door. You get a fixed all-in landed price before you pay.
-          </p>
-        </Container>
+        <div className="mx-auto grid max-w-[1600px] lg:grid-cols-[1.05fr_1fr]">
+          <div className="px-5 py-14 md:px-8 md:py-20">
+            <p className="eyebrow">Import a Car</p>
+            <h1 className="mt-3 max-w-[18ch] font-display text-3xl font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-4xl md:text-5xl">
+              Can&apos;t find it? We&apos;ll import it for you.
+            </h1>
+            <p className="mt-4 max-w-[60ch] text-savanna-200/85">
+              Tell us the exact make, model, year and budget. We source from Japanese, UK and Dubai auctions, handle KEBS inspection, freight, KRA duty, clearing and NTSA registration — then deliver to your door. You get a fixed all-in landed price before you pay.
+            </p>
+          </div>
+          <div className="relative min-h-[220px] md:min-h-[300px] lg:min-h-[420px]">
+            <img src="/cars/guide-import.jpg" alt="Car carrier ship arriving at the Port of Mombasa" className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
+            <div className="absolute inset-0 bg-gradient-to-t from-savanna-950 via-savanna-950/20 to-transparent lg:bg-gradient-to-r lg:from-savanna-950 lg:via-savanna-950/30 lg:to-transparent" />
+          </div>
+        </div>
       </section>
 
       <Section>

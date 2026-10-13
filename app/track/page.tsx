@@ -1,4 +1,4 @@
-import { Check, Download, MapPin } from "lucide-react";
+import { Check, Download } from "lucide-react";
 import { Container } from "@/components/container";
 import { Section, SectionHeader } from "@/components/section";
 import { cn } from "@/lib/utils";
@@ -80,9 +80,13 @@ export default function TrackPage() {
             <aside className="space-y-4">
               <div className="rounded-2xl border border-sand-200 bg-white p-4">
                 <b className="text-sm">Live location</b>
-                <div className="mt-2 grid h-40 place-items-center gap-2 rounded-xl bg-sand-100 text-xs text-muted">
-                  <MapPin className="h-5 w-5 text-savanna-500" />
-                  Vessel position on route
+                <div className="relative mt-2 h-40 overflow-hidden rounded-xl bg-sand-100">
+                  <img src="/cars/guide-import.jpg" alt="Vessel MV Horizon carrying vehicles to Mombasa" className="h-full w-full object-cover" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-savanna-950/80 via-savanna-950/10 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-3 text-xs text-white">
+                    <b className="block">MV Horizon · Indian Ocean</b>
+                    <span className="text-savanna-200/85">Yokohama → Mombasa · ETA 29 Nov</span>
+                  </div>
                 </div>
               </div>
               <div className="rounded-2xl border border-sand-200 bg-white p-4">

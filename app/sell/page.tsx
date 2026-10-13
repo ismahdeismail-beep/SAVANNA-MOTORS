@@ -23,15 +23,21 @@ export default function SellPage() {
   return (
     <>
       <section className="bg-savanna-950 text-white">
-        <Container className="py-14 md:py-20">
-          <p className="eyebrow">Sell / Trade-in</p>
-          <h1 className="mt-3 max-w-[20ch] font-display text-3xl font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-4xl md:text-5xl">
-            Sell or trade in your car.
-          </h1>
-          <p className="mt-4 max-w-[60ch] text-savanna-200/85">
-            Get a free valuation in 24 hours. Sell outright for cash, or trade in against any car in our stock or a fresh import.
-          </p>
-        </Container>
+        <div className="mx-auto grid max-w-[1600px] lg:grid-cols-[1.05fr_1fr]">
+          <div className="px-5 py-14 md:px-8 md:py-20">
+            <p className="eyebrow">Sell / Trade-in</p>
+            <h1 className="mt-3 max-w-[16ch] font-display text-3xl font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-4xl md:text-5xl">
+              Sell or trade in your car.
+            </h1>
+            <p className="mt-4 max-w-[56ch] text-savanna-200/85">
+              Get a free valuation in 24 hours. Sell outright for cash, or trade in against any car in our stock or a fresh import.
+            </p>
+          </div>
+          <div className="relative min-h-[220px] md:min-h-[300px] lg:min-h-[420px]">
+            <img src="/cars/toyota-probox-2017.jpg" alt="Toyota Probox at the Savanna Motors yard" className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
+            <div className="absolute inset-0 bg-gradient-to-t from-savanna-950 via-savanna-950/20 to-transparent lg:bg-gradient-to-r lg:from-savanna-950 lg:via-savanna-950/30 lg:to-transparent" />
+          </div>
+        </div>
       </section>
 
       <Section>
