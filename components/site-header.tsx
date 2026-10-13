@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Phone, MessageCircle } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Container } from "./container";
-import { PHONE, WHATSAPP } from "@/lib/data";
+import { PHONE } from "@/lib/data";
 
 const nav = [
   { href: "/inventory", label: "Inventory" },
@@ -25,17 +25,14 @@ export function SiteHeader() {
             <a href={`tel:${PHONE}`} className="flex items-center gap-1 hover:text-white">
               <Phone className="h-3.5 w-3.5" /> {PHONE}
             </a>
-            <a href={WHATSAPP} className="flex items-center gap-1 hover:text-white">
-              <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
-            </a>
           </span>
-          <span>🇯🇵 Japan · 🇬🇧 UK · 🇦🇪 Dubai · 📍 Nairobi · Mombasa · Eldoret</span>
+          <span>Japan · UK · Dubai — Nairobi · Mombasa · Eldoret</span>
         </Container>
       </div>
       <div className="border-b border-sand-300 bg-white/95 backdrop-blur">
         <Container className="flex items-center justify-between gap-4 py-3">
           <Link href="/" className="flex items-center gap-2.5">
-            <span className="grid h-10 w-10 place-items-center rounded-full bg-savanna-800 text-lg">🦒</span>
+            <span className="grid h-10 w-10 place-items-center rounded-full bg-savanna-800 font-display text-sm font-extrabold text-gold-400">SM</span>
             <span className="leading-none">
               <span className="block font-display text-[17px] font-extrabold tracking-tight text-savanna-800">
                 SAVANNA<span className="text-gold-400">MOTORS</span>

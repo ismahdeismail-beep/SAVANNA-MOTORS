@@ -68,7 +68,7 @@ export default function ImportPage() {
                 <input className="field" name="budget" placeholder="Budget KSh" />
               </div>
               <input className="field" name="body" placeholder="Body / fuel preference" />
-              <input className="field" name="phone" type="tel" required placeholder="Your phone (WhatsApp)" />
+              <input className="field" name="phone" type="tel" required placeholder="Your phone number" />
               <textarea className="field min-h-[90px]" name="message" placeholder="Notes — trim, colour, mileage, negotiation cap…" />
               <p className="text-[11px] text-muted">Age rule enforced: models 2019 or newer for 2026 import.</p>
             </LeadForm>

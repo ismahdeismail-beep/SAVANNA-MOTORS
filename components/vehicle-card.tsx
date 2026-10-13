@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Fuel, Gauge, MessageCircle, Settings2, MapPin } from "lucide-react";
-import { type Vehicle, WHATSAPP } from "@/lib/data";
+import { Fuel, Gauge, Settings2, MapPin } from "lucide-react";
+import { type Vehicle } from "@/lib/data";
 import { cn, kes, monthlyPayment } from "@/lib/utils";
 
 const conditionStyle: Record<Vehicle["condition"], string> = {
@@ -62,12 +62,9 @@ export function VehicleCard({ v, className }: { v: Vehicle; className?: string }
           </div>
         </Link>
 
-        <div className="mt-4 flex gap-2">
-          <a href={WHATSAPP} className="btn btn-green btn-sm flex-1">
-            <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
-          </a>
-          <Link href={`/vehicle/${v.id}`} className="btn btn-out btn-sm flex-1">
-            Details
+        <div className="mt-4">
+          <Link href={`/vehicle/${v.id}`} className="btn btn-out btn-sm w-full">
+            View details
           </Link>
         </div>
       </div>

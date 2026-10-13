@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { Phone, Mail } from "lucide-react";
 import { Container } from "./container";
-import { EMAIL, PHONE, WHATSAPP } from "@/lib/data";
+import { EMAIL, PHONE } from "@/lib/data";
 
 const cols = [
   { title: "Buy", links: [["Inventory", "/inventory"], ["Fresh imports", "/inventory?condition=Fresh+import"], ["Financing", "/financing"], ["Sell / Trade-in", "/sell"]] },
@@ -50,7 +51,10 @@ export function SiteFooter() {
         </div>
       </Container>
       <Container className="flex flex-wrap items-center justify-between gap-3 border-t border-savanna-900 py-5 text-xs text-savanna-400/70">
-        <span>📞 <a href="tel:+254 700 000 000" className="hover:text-white">+254 700 000 000</a> · ✉️ <a href="mailto:sales@savannamotors.co.ke" className="hover:text-white">sales@savannamotors.co.ke</a> · <a href="https://wa.me/254700000000" className="hover:text-white">WhatsApp</a></span>
+        <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
+          <a href={`tel:${PHONE}`} className="flex items-center gap-1.5 hover:text-white"><Phone className="h-3.5 w-3.5" /> {PHONE}</a>
+          <a href={`mailto:${EMAIL}`} className="flex items-center gap-1.5 hover:text-white"><Mail className="h-3.5 w-3.5" /> {EMAIL}</a>
+        </span>
         <span>© 2026 Savanna Motors EA Ltd · Privacy · Terms · Deposit & refund policy</span>
       </Container>
     </footer>

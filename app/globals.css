@@ -77,21 +77,6 @@ html[data-page="visiting"] > * { animation: page-fade-out 250ms ease-in-out forw
 html[data-page="cached"] > * { animation: page-fade-in 300ms ease-out forwards; }
 
 /* Car placeholder */
-.car-ph {
-  background: linear-gradient(135deg, #245640 0%, #1b4332 50%, #12301f 100%);
-  position: relative;
-  overflow: hidden;
-}
-.car-ph::after {
-  content: "🚗";
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-size: 4rem;
-  opacity: 0.15;
-}
-
 /* Focus styles */
 .focus-visible-ring { @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-savanna-500 focus-visible:ring-offset-2; }
 

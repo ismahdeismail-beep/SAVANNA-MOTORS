@@ -1,17 +1,18 @@
+import { Banknote, Repeat, Tag } from "lucide-react";
 import { Container } from "@/components/container";
 import { LeadForm } from "@/components/lead-form";
 
 export const metadata = { title: "Sell / Trade-in — Savanna Motors" };
 
 const options = [
-  { icon: "💰", t: "Sell outright", d: "We buy your car and pay you via M-Pesa or bank within 48h of inspection." },
-  { icon: "🔄", t: "Trade-in", d: "Swap your car against stock or an import order; offset the price." },
-  { icon: "🏷️", t: "Sell on consignment", d: "We list, show and sell it from our yard for a fee." },
+  { icon: Banknote, t: "Sell outright", d: "We buy your car and pay you via M-Pesa or bank within 48h of inspection." },
+  { icon: Repeat, t: "Trade-in", d: "Swap your car against stock or an import order; offset the price." },
+  { icon: Tag, t: "Sell on consignment", d: "We list, show and sell it from our yard for a fee." },
 ];
 
 const nextSteps = [
   "Submit details & photos",
-  "We call / WhatsApp to book inspection",
+  "We call to book inspection",
   "Free physical inspection (Nairobi / Mombasa)",
   "Firm offer within 24h",
   "Paid via M-Pesa or bank on acceptance",
@@ -34,8 +35,10 @@ export default function SellPage() {
         <Container className="grid gap-5 md:grid-cols-3">
           {options.map((o) => (
             <div key={o.t} className="card-hover p-5">
-              <div className="text-3xl mb-2">{o.icon}</div>
-              <h3 className="mt-2 font-display text-lg font-extrabold">{o.t}</h3>
+              <div className="mb-3 grid h-12 w-12 place-items-center rounded-xl bg-savanna-100">
+                <o.icon className="h-6 w-6 text-savanna-700" />
+              </div>
+              <h3 className="font-display text-lg font-extrabold">{o.t}</h3>
               <p className="mt-1 text-sm text-muted">{o.d}</p>
             </div>
           ))}
@@ -56,7 +59,7 @@ export default function SellPage() {
                 <input className="field" name="mileage" placeholder="Mileage (km)" />
               </div>
               <input className="field" name="chassis" placeholder="Reg / chassis no." />
-              <input className="field" name="phone" type="tel" required placeholder="Your phone (WhatsApp)" />
+              <input className="field" name="phone" type="tel" required placeholder="Your phone number" />
               <div className="grid grid-cols-5 gap-2">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <label key={i} className="grid h-16 cursor-pointer place-items-center rounded-xl border border-dashed border-sand-300 text-muted">

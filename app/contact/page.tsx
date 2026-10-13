@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { Mail, Phone, MapPin, MessageCircle, Send } from "lucide-react";
+import { WHATSAPP } from "@/lib/data";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
@@ -36,38 +37,34 @@ export default function ContactPage() {
             <p className="text-muted text-lg max-w-2xl mx-auto">Have questions about importing, financing, or selling? Our team is ready to help.</p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 mb-12">
+          <div className="grid gap-8 md:grid-cols-2 mb-4">
             <div className="card-hover p-6 text-center group">
               <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-savanna-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                <MessageCircle className="h-8 w-8 text-savanna-700" />
+                <Phone className="h-8 w-8 text-savanna-700" />
               </div>
-              <h3 className="font-display text-xl font-extrabold mb-2">WhatsApp (Primary)</h3>
-              <p className="text-muted mb-4">Fastest response — chat directly with our team.</p>
-              <a href="https://wa.me/254700000000" target="_blank" className="btn btn-gold w-full inline-flex items-center justify-center gap-2">
-                <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
+              <h3 className="font-display text-xl font-extrabold mb-2">Call us</h3>
+              <p className="text-muted mb-4">Mon–Sat 8am–6pm · Sun 10am–4pm</p>
+              <a href="tel:+254700000000" className="btn btn-green w-full inline-flex items-center justify-center gap-2">
+                <Phone className="h-5 w-5" /> +254 700 000 000
               </a>
             </div>
             <div className="card-hover p-6 text-center group">
               <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-savanna-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                 <Mail className="h-8 w-8 text-savanna-700" />
               </div>
-              <h3 className="font-display text-xl font-extrabold mb-2">Email Us</h3>
-              <p className="text-muted mb-4">We'll respond within 24 hours.</p>
+              <h3 className="font-display text-xl font-extrabold mb-2">Email us</h3>
+              <p className="text-muted mb-4">We&apos;ll respond within 24 hours.</p>
               <a href="mailto:sales@savannamotors.co.ke" className="btn btn-out w-full inline-flex items-center justify-center gap-2">
-                <Mail className="h-5 w-5" /> Email Us
-              </a>
-            </div>
-            <div className="card-hover p-6 text-center group md:col-span-2">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-savanna-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                <Phone className="h-8 w-8 text-savanna-700" />
-              </div>
-              <h3 className="font-display text-xl font-extrabold mb-2">Call Us</h3>
-              <p className="text-muted mb-4">Mon–Sat 8am–6pm · Sun 10am–4pm</p>
-              <a href="tel:+254700000000" className="btn btn-green w-full inline-flex items-center justify-center gap-2">
-                <Phone className="h-5 w-5" /> Call +254 700 000 000
+                <Mail className="h-5 w-5" /> sales@savannamotors.co.ke
               </a>
             </div>
           </div>
+          <p className="text-center text-sm text-muted mb-12">
+            Prefer chat?{" "}
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="link">
+              <MessageCircle className="h-4 w-4 inline -mt-0.5" /> Message us on WhatsApp
+            </a>
+          </p>
 
           <div className="card bg-sand-50 p-6">
             <h2 className="font-display text-2xl font-extrabold mb-6 text-center">Or send us a message</h2>

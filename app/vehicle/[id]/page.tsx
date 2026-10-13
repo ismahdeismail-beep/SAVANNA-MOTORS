@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Gauge, Fuel, Settings2, Car, Palette, Users, ShieldCheck, MapPin } from "lucide-react";
+import { Gauge, Fuel, Settings2, Car, Palette, Users, ShieldCheck, MapPin, Phone } from "lucide-react";
 import { Container } from "@/components/container";
 import { VehicleCard } from "@/components/vehicle-card";
-import { getVehicle, vehicles, WHATSAPP } from "@/lib/data";
+import { getVehicle, vehicles } from "@/lib/data";
 import { kes, monthlyPayment } from "@/lib/utils";
 import { VehicleGallery } from "./VehicleGallery";
 
@@ -112,17 +112,14 @@ export default async function VehiclePage({ params }: { params: P }) {
               )}
 
               <div className="mt-6 space-y-3">
-                <a href={WHATSAPP} className="btn btn-gold btn-lg w-full flex items-center justify-center gap-2">
-                  <span className="text-lg">💬</span> WhatsApp this car
-                </a>
-                <button className="btn btn-green btn-lg w-full">Reserve with M-Pesa deposit</button>
+                <button className="btn btn-gold btn-lg w-full">Reserve with M-Pesa deposit</button>
                 <Link href="/financing" className="btn btn-out btn-lg w-full">Apply for financing</Link>
                 <div className="flex gap-2">
                   <a href="tel:+254700000000" className="btn btn-out flex-1 flex items-center justify-center gap-2">
-                    <span className="text-lg">📞</span> Call
+                    <Phone className="h-4 w-4" /> Call
                   </a>
                   <button className="btn btn-out flex-1 flex items-center justify-center gap-2">
-                    <span className="text-lg">🚗</span> Test drive
+                    <Car className="h-4 w-4" /> Test drive
                   </button>
                 </div>
               </div>

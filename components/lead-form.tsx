@@ -68,7 +68,7 @@ export function LeadForm({
         <p className="text-sm font-semibold text-savanna-700">Thank you — we&apos;ll get back to you the same day.</p>
       )}
       {status === "error" && (
-        <p className="text-sm text-red-600">Something went wrong. Please WhatsApp us instead.</p>
+        <p className="text-sm text-red-600">Something went wrong. Please call us on +254 700 000 000 instead.</p>
       )}
     </form>
   );

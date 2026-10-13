@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { ShieldCheck, Shield, MapPin, Clock, Phone, Users, Trophy, Truck, Sparkles } from "lucide-react";
+import { ShieldCheck, Shield, MapPin, Clock, Phone, Mail, Users, Trophy, Truck, Sparkles } from "lucide-react";
 import { Container } from "@/components/container";
-import { branches, EMAIL, WHATSAPP, PHONE } from "@/lib/data";
+import { branches, EMAIL, PHONE } from "@/lib/data";
 
 export const metadata = { title: "About — Savanna Motors" };
 
@@ -62,7 +62,12 @@ export default function AboutPage() {
               ))}
             </ul>
           </div>
-          <div className="car-ph h-64 md:h-80 rounded-3xl" />
+          <img
+            src="/cars/hero.jpg"
+            alt="Land Cruiser at the Savanna Motors yard"
+            className="h-64 w-full rounded-3xl object-cover md:h-80"
+            loading="lazy"
+          />
         </Container>
       </section>
 
@@ -118,18 +123,17 @@ export default function AboutPage() {
           <div>
             <h2 className="font-display text-2xl font-extrabold mb-3">Contact us</h2>
             <p className="text-sm text-muted max-w-md">
-              WhatsApp is fastest, or reach us by phone, email or at any branch. We reply within 24 hours.
+              Call or email us directly, or send a message — we reply within 24 hours.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <a href={WHATSAPP} className="btn btn-green btn-lg">Chat on WhatsApp</a>
-              <Link href="/contact" className="btn btn-out btn-lg">Send a message</Link>
+              <Link href="/contact" className="btn btn-green btn-lg">Send a message</Link>
+              <a href={`tel:${PHONE}`} className="btn btn-out btn-lg">Call us</a>
             </div>
           </div>
           <ul className="space-y-3 text-sm">
-            <li>💬 <a href={WHATSAPP} className="link">WhatsApp</a></li>
-            <li>✉️ <a href={`mailto:${EMAIL}`} className="link">{EMAIL}</a></li>
-            <li>📞 <a href={`tel:${PHONE}`} className="link">{PHONE}</a></li>
-            <li>⏰ Mon–Sat 8am–6pm</li>
+            <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0 text-savanna-600" /><a href={`tel:${PHONE}`} className="link">{PHONE}</a></li>
+            <li className="flex items-center gap-2"><Mail className="h-4 w-4 shrink-0 text-savanna-600" /><a href={`mailto:${EMAIL}`} className="link">{EMAIL}</a></li>
+            <li className="flex items-center gap-2"><Clock className="h-4 w-4 shrink-0 text-savanna-600" />Mon–Sat 8am–6pm</li>
           </ul>
         </Container>
       </section>

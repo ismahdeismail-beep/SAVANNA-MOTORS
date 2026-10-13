@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, Download } from "lucide-react";
 import { Container } from "@/components/container";
 import { cn } from "@/lib/utils";
 
@@ -78,7 +78,8 @@ export default function TrackPage() {
                 <b className="text-sm">Documents</b>
                 {docs.map((d) => (
                   <div key={d} className="flex justify-between border-b border-dashed border-sand-200 py-2 text-sm last:border-0">
-                    <span>{d}</span><span className="link">⬇ PDF</span>
+                    <span>{d}</span>
+                    <a href="#" className="link inline-flex items-center gap-1"><Download className="h-3.5 w-3.5" /> PDF</a>
                   </div>
                 ))}
               </div>

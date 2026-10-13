@@ -1,15 +1,11 @@
 import Link from "next/link";
+import { Calculator, CreditCard, BadgeCheck } from "lucide-react";
 import { Container } from "@/components/container";
 import { guides } from "@/lib/data";
 
 export const metadata = { title: "Guides — Savanna Motors" };
 
 const cats = ["All", "Importing", "KRA & duty", "Financing", "Buying guides", "Maintenance", "EV & hybrid"];
-const tools = [
-  { icon: "🧮", title: "Landed-cost calculator", desc: "Estimate duty + total by model/year.", href: "/import#calculator" },
-  { icon: "💳", title: "Loan calculator", desc: "Monthly repayment by deposit & term.", href: "/financing" },
-  { icon: "✅", title: "Import eligibility check", desc: "Is the year within the 8-yr rule?", href: "/import" },
-];
 
 export default function GuidesPage() {
   const featured = guides.find((g) => g.featured)!;
@@ -39,7 +35,9 @@ export default function GuidesPage() {
 
           <div className="mt-6 grid gap-5 lg:grid-cols-[1.4fr_1fr]">
             <Link href={`/guides#${featured.slug}`} className="card-hover overflow-hidden group">
-              <div className="car-ph h-56 w-full" />
+              <div className="h-56 w-full overflow-hidden bg-sand-100">
+                <img src={featured.image} alt="" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+              </div>
               <div className="p-5">
                 <span className="text-xs font-bold uppercase text-gold-600">{featured.category}</span>
                 <h2 className="mt-1 font-display text-xl font-extrabold group-hover:text-gold-500 transition-colors">{featured.title}</h2>
@@ -66,7 +64,9 @@ export default function GuidesPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {guides.filter((g) => !g.featured).map((g) => (
               <Link key={g.slug} href={`/guides#${g.slug}`} className="card-hover overflow-hidden group">
-                <div className="car-ph h-36 w-full" />
+                <div className="h-36 w-full overflow-hidden bg-sand-100">
+                  <img src={g.image} alt="" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+                </div>
                 <div className="p-4">
                   <span className="badge bg-savanna-100 text-savanna-800">{g.category}</span>
                   <h3 className="mt-2 font-display text-sm font-extrabold group-hover:text-gold-500 transition-colors">{g.title}</h3>
@@ -83,17 +83,17 @@ export default function GuidesPage() {
           <h2 className="font-display text-2xl font-extrabold mb-8 text-center">Free tools</h2>
           <div className="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto">
             <Link href="/import#calculator" className="card-hover p-6 text-center group">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-savanna-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"><span className="text-3xl">🧮</span></div>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-savanna-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"><Calculator className="h-7 w-7 text-savanna-700" /></div>
               <h3 className="font-display text-base font-extrabold">Landed-cost calculator</h3>
               <p className="mt-1 text-sm text-muted">Estimate duty + total by model/year</p>
             </Link>
             <Link href="/financing" className="card-hover p-6 text-center group">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gold-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"><span className="text-3xl">💳</span></div>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gold-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"><CreditCard className="h-7 w-7 text-gold-700" /></div>
               <h3 className="font-display text-base font-extrabold">Loan calculator</h3>
               <p className="mt-1 text-sm text-muted">Monthly repayment by deposit & term</p>
             </Link>
             <Link href="/import" className="card-hover p-6 text-center group">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-blue-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"><span className="text-3xl">✅</span></div>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-blue-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"><BadgeCheck className="h-7 w-7 text-blue-700" /></div>
               <h3 className="font-display text-base font-extrabold">Import eligibility check</h3>
               <p className="mt-1 text-sm text-muted">Is the year within the 8-yr rule?</p>
             </Link>
