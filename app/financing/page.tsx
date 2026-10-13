@@ -1,4 +1,5 @@
 import { Container } from "@/components/container";
+import { Section, SectionHeader } from "@/components/section";
 import { FinanceCalculator } from "@/components/finance-calculator";
 import { banks } from "@/lib/data";
 
@@ -12,26 +13,39 @@ const steps = [
 
 export default function FinancingPage() {
   return (
-    <div className="py-12">
-      <Container>
-        <div className="text-center mb-12">
-          <h1 className="font-display text-3xl md:text-4xl font-extrabold mb-4">Drive now, pay monthly.</h1>
-          <p className="text-muted max-w-2xl mx-auto text-lg">Finance your car or import through Kenya's leading banks. Pre-qualify online in minutes — no branch visit to start.</p>
-        </div>
+    <>
+      <section className="bg-savanna-950 text-white">
+        <Container className="py-14 md:py-20">
+          <p className="eyebrow">Financing</p>
+          <h1 className="mt-3 max-w-[18ch] font-display text-3xl font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-4xl md:text-5xl">
+            Drive now, pay monthly.
+          </h1>
+          <p className="mt-4 max-w-[60ch] text-savanna-200/85">
+            Finance your car or import through Kenya&apos;s leading banks. Pre-qualify online in minutes — no branch visit to start.
+          </p>
+        </Container>
+      </section>
 
-        <section className="mb-16">
-          <div className="card-hover p-8 max-w-2xl mx-auto">
+      <Section>
+        <Container>
+          <div className="mx-auto max-w-2xl rounded-2xl border border-sand-200 bg-white p-6 shadow-sm md:p-8">
             <FinanceCalculator price={3000000} compact={false} />
           </div>
-        </section>
+        </Container>
+      </Section>
 
-        <section className="mb-16">
-          <h2 className="font-display text-2xl font-extrabold mb-8 text-center">Our finance partners</h2>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
+      <Section tone="tint">
+        <Container>
+          <SectionHeader
+            eyebrow="Partners"
+            title="Our finance partners"
+            lead="Pre-qualify with any of them through a single application with us."
+          />
+          <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {banks.map((b) => (
-              <div key={b.name} className="card-hover p-6 text-center group">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-savanna-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                  <span className="text-2xl font-bold text-savanna-700">{b.name.charAt(0)}</span>
+              <div key={b.name} className="rounded-2xl border border-sand-200 bg-white p-6 text-center transition-colors hover:border-sand-300">
+                <div className="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-2xl bg-savanna-100 font-display text-xl font-extrabold text-savanna-700">
+                  {b.name.charAt(0)}
                 </div>
                 <h3 className="font-display text-lg font-extrabold mb-1">{b.name}</h3>
                 <p className="text-sm text-muted mb-4">{b.product}</p>
@@ -39,25 +53,32 @@ export default function FinancingPage() {
               </div>
             ))}
           </div>
-        </section>
+        </Container>
+      </Section>
 
-        <section className="mb-16">
-          <h2 className="font-display text-2xl font-extrabold mb-8 text-center">Pre-qualify in 3 steps</h2>
-          <div className="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto">
+      <Section>
+        <Container>
+          <SectionHeader
+            eyebrow="How it works"
+            title="Pre-qualify in 3 steps"
+            lead="No branch visit to start — decisions typically within 48 hours."
+          />
+          <ol className="mt-9 grid gap-x-10 md:grid-cols-3">
             {steps.map((s) => (
-              <div key={s.n} className="card-hover p-6 relative overflow-hidden">
-                <div className="absolute top-4 right-4 text-4xl font-extrabold text-savanna-200/10 font-display">{s.n}</div>
-                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-savanna-800 text-white flex items-center justify-center text-xl font-bold">{s.n}</div>
-                <h3 className="font-display text-lg font-extrabold text-center mb-2">{s.title}</h3>
-                <p className="text-sm text-muted text-center">{s.desc}</p>
-              </div>
+              <li key={s.n} className="flex gap-4 border-t border-sand-200 py-5">
+                <span className="pt-0.5 font-display text-sm font-extrabold text-gold-600">{String(s.n).padStart(2, "0")}</span>
+                <div>
+                  <h3 className="font-display text-base font-extrabold">{s.title}</h3>
+                  <p className="mt-1 text-sm text-muted">{s.desc}</p>
+                </div>
+              </li>
             ))}
-          </div>
-          <div className="mt-10 text-center">
+          </ol>
+          <div className="mt-8">
             <button className="btn btn-gold btn-lg px-8">Start pre-qualification</button>
           </div>
-        </section>
-      </Container>
-    </div>
+        </Container>
+      </Section>
+    </>
   );
 }

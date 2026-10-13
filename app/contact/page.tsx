@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Container } from "@/components/container";
-import { Mail, Phone, MapPin, MessageCircle, Send } from "lucide-react";
-import { WHATSAPP } from "@/lib/data";
+import { Section, SectionHeader } from "@/components/section";
+import { Mail, Phone, MessageCircle, Send } from "lucide-react";
+import { WHATSAPP, PHONE, EMAIL } from "@/lib/data";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
@@ -29,58 +29,75 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="py-12">
-      <Container>
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="font-display text-3xl md:text-4xl font-extrabold mb-4">Get in Touch</h1>
-            <p className="text-muted text-lg max-w-2xl mx-auto">Have questions about importing, financing, or selling? Our team is ready to help.</p>
-          </div>
+    <>
+      <section className="bg-savanna-950 text-white">
+        <Container className="py-14 md:py-20">
+          <p className="eyebrow">Contact</p>
+          <h1 className="mt-3 font-display text-3xl font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-4xl md:text-5xl">
+            Get in touch
+          </h1>
+          <p className="mt-4 max-w-[58ch] text-savanna-200/85">
+            Have questions about importing, financing or selling? Our team is ready to help.
+          </p>
+        </Container>
+      </section>
 
-          <div className="grid gap-8 md:grid-cols-2 mb-4">
-            <div className="card-hover p-6 text-center group">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-savanna-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                <Phone className="h-8 w-8 text-savanna-700" />
+      <Section>
+        <Container className="mx-auto max-w-3xl">
+          <div className="grid gap-5 sm:grid-cols-2">
+            <div className="rounded-2xl border border-sand-200 bg-white p-6 text-center">
+              <div className="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-2xl bg-savanna-100">
+                <Phone className="h-7 w-7 text-savanna-700" />
               </div>
-              <h3 className="font-display text-xl font-extrabold mb-2">Call us</h3>
-              <p className="text-muted mb-4">Mon–Sat 8am–6pm · Sun 10am–4pm</p>
-              <a href="tel:+254700000000" className="btn btn-green w-full inline-flex items-center justify-center gap-2">
-                <Phone className="h-5 w-5" /> +254 700 000 000
+              <h3 className="font-display text-lg font-extrabold">Call us</h3>
+              <p className="mt-1 text-sm text-muted">Mon–Sat 8am–6pm · Sun 10am–4pm</p>
+              <a href={`tel:${PHONE}`} className="btn btn-green mt-4 w-full">
+                <Phone className="h-4 w-4" /> {PHONE}
               </a>
             </div>
-            <div className="card-hover p-6 text-center group">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-savanna-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                <Mail className="h-8 w-8 text-savanna-700" />
+            <div className="rounded-2xl border border-sand-200 bg-white p-6 text-center">
+              <div className="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-2xl bg-savanna-100">
+                <Mail className="h-7 w-7 text-savanna-700" />
               </div>
-              <h3 className="font-display text-xl font-extrabold mb-2">Email us</h3>
-              <p className="text-muted mb-4">We&apos;ll respond within 24 hours.</p>
-              <a href="mailto:sales@savannamotors.co.ke" className="btn btn-out w-full inline-flex items-center justify-center gap-2">
-                <Mail className="h-5 w-5" /> sales@savannamotors.co.ke
+              <h3 className="font-display text-lg font-extrabold">Email us</h3>
+              <p className="mt-1 text-sm text-muted">We&apos;ll respond within 24 hours.</p>
+              <a href={`mailto:${EMAIL}`} className="btn btn-out mt-4 w-full break-all">
+                <Mail className="h-4 w-4" /> {EMAIL}
               </a>
             </div>
           </div>
-          <p className="text-center text-sm text-muted mb-12">
+          <p className="mt-5 text-center text-sm text-muted">
             Prefer chat?{" "}
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="link">
-              <MessageCircle className="h-4 w-4 inline -mt-0.5" /> Message us on WhatsApp
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="link inline-flex items-center gap-1">
+              <MessageCircle className="h-4 w-4" /> Message us on WhatsApp
             </a>
           </p>
+        </Container>
+      </Section>
 
-          <div className="card bg-sand-50 p-6">
-            <h2 className="font-display text-2xl font-extrabold mb-6 text-center">Or send us a message</h2>
-            {error && <div className="bg-red-50 border-l-4 border-red-500 text-red-700 p-4 rounded-md mb-6"><p className="text-sm">{error}</p></div>}
-            {success && <div className="bg-green-50 border-l-4 border-green-500 text-green-700 p-4 rounded-md mb-6"><p className="text-sm">{success}</p></div>}
-            <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
-              <div className="grid gap-4 md:grid-cols-2">
-                <div><label className="label">Name</label><input type="text" name="name" required className="field" placeholder="Your full name" /></div>
-                <div><label className="label">Email</label><input type="email" name="email" required className="field" placeholder="your@email.com" /></div>
+      <Section tone="tint">
+        <Container className="mx-auto max-w-3xl">
+          <SectionHeader
+            eyebrow="Write to us"
+            title="Send a message"
+            lead="Fill this in and we reply within 24 hours — usually much sooner."
+          />
+          <div className="mt-8 rounded-2xl border border-sand-200 bg-white p-6 shadow-sm md:p-8">
+            {error && <div className="mb-6 rounded-lg border-l-4 border-red-500 bg-red-50 p-4 text-sm text-red-700">{error}</div>}
+            {success && <div className="mb-6 rounded-lg border-l-4 border-green-500 bg-green-50 p-4 text-sm text-green-700">{success}</div>}
+            <form onSubmit={handleSubmit} className="mx-auto max-w-xl space-y-4">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div><label className="label" htmlFor="c-name">Name</label><input id="c-name" type="text" name="name" required className="field" placeholder="Your full name" /></div>
+                <div><label className="label" htmlFor="c-email">Email</label><input id="c-email" type="email" name="email" required className="field" placeholder="your@email.com" /></div>
               </div>
-              <div><label className="label">Message</label><textarea name="message" rows={5} required className="field min-h-[140px]" placeholder="How can we help you?" /></div>
-              <button type="submit" className="btn btn-green w-full py-3" disabled={loading}>{loading ? "Sending…" : "Send Message"}</button>
+              <div><label className="label" htmlFor="c-msg">Message</label><textarea id="c-msg" name="message" rows={5} required className="field min-h-[140px]" placeholder="How can we help you?" /></div>
+              <button type="submit" className="btn btn-green w-full py-3" disabled={loading}>
+                {loading ? "Sending…" : <><Send className="h-4 w-4" /> Send message</>}
+              </button>
             </form>
           </div>
-        </div>
-      </Container>
-    </div>
+        </Container>
+      </Section>
+    </>
   );
 }

@@ -1,5 +1,6 @@
-import { Check, Download } from "lucide-react";
+import { Check, Download, MapPin } from "lucide-react";
 import { Container } from "@/components/container";
+import { Section, SectionHeader } from "@/components/section";
 import { cn } from "@/lib/utils";
 
 export const metadata = { title: "Track your import — Savanna Motors" };
@@ -19,21 +20,30 @@ const docs = ["Pro-forma invoice", "Auction sheet", "CoC (KEBS)", "Bill of ladin
 export default function TrackPage() {
   return (
     <>
-      <section className="bg-savanna-900 py-12 text-white">
-        <Container>
-          <span className="text-xs font-bold uppercase tracking-[0.14em] text-gold-400">Import tracker</span>
-          <h1 className="mt-2 font-display text-3xl font-extrabold">Track your import</h1>
-          <p className="mt-2 text-savanna-200">Enter your order number, or log in to see live shipment progress.</p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <input className="field w-64 md:w-80 bg-white/10 border-white/20 text-white placeholder:text-savanna-300/70" placeholder="Order no. e.g. SM-2026-0142" defaultValue="SM-2026-0142" />
+      <section className="bg-savanna-950 text-white">
+        <Container className="py-14 md:py-20">
+          <p className="eyebrow">Import tracker</p>
+          <h1 className="mt-3 font-display text-3xl font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-4xl md:text-5xl">
+            Track your import
+          </h1>
+          <p className="mt-3 max-w-[58ch] text-savanna-200/85">
+            Enter your order number, or log in to see live shipment progress.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            <input
+              className="field w-full border-white/20 bg-white/10 text-white placeholder:text-savanna-300/70 sm:w-80"
+              placeholder="Order no. e.g. SM-2026-0142"
+              defaultValue="SM-2026-0142"
+              aria-label="Order number"
+            />
             <button className="btn btn-gold btn-md">Track</button>
           </div>
         </Container>
       </section>
 
-      <section className="py-10">
+      <Section>
         <Container>
-          <div className="card grid gap-4 p-5 sm:grid-cols-3 lg:grid-cols-5 mb-6">
+          <div className="grid gap-4 rounded-2xl border border-sand-200 bg-white p-5 shadow-sm sm:grid-cols-3 lg:grid-cols-5">
             <div><div className="label">Order</div><b className="text-sm">SM-2026-0142</b></div>
             <div><div className="label">Vehicle</div><b className="text-sm">2019 Toyota Harrier Z</b></div>
             <div><div className="label">Chassis</div><b className="text-sm">ZSU60-xxxxxxx</b></div>
@@ -41,10 +51,10 @@ export default function TrackPage() {
             <div><div className="label">Status</div><span className="badge bg-gold-400 text-gold-900">In transit</span></div>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-start">
-            <div className="card p-6">
-              <h2 className="font-display text-lg font-extrabold mb-6">Progress</h2>
-              <ol className="space-y-1">
+          <div className="mt-8 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-start">
+            <div className="rounded-2xl border border-sand-200 bg-white p-6">
+              <SectionHeader eyebrow="Milestones" title="Progress" />
+              <ol className="mt-6 space-y-1">
                 {milestones.map((m, i) => (
                   <li key={m.t} className="flex gap-4">
                     <div className="flex flex-col items-center">
@@ -68,31 +78,32 @@ export default function TrackPage() {
             </div>
 
             <aside className="space-y-4">
-              <div className="card p-4">
+              <div className="rounded-2xl border border-sand-200 bg-white p-4">
                 <b className="text-sm">Live location</b>
-                <div className="mt-2 grid h-40 place-items-center rounded-xl border border-dashed border-sand-300 text-xs text-muted">
-                  Map · vessel position on route
+                <div className="mt-2 grid h-40 place-items-center gap-2 rounded-xl bg-sand-100 text-xs text-muted">
+                  <MapPin className="h-5 w-5 text-savanna-500" />
+                  Vessel position on route
                 </div>
               </div>
-              <div className="card p-4">
+              <div className="rounded-2xl border border-sand-200 bg-white p-4">
                 <b className="text-sm">Documents</b>
                 {docs.map((d) => (
-                  <div key={d} className="flex justify-between border-b border-dashed border-sand-200 py-2 text-sm last:border-0">
+                  <div key={d} className="mt-1 flex justify-between border-b border-dashed border-sand-200 py-2 text-sm last:border-0">
                     <span>{d}</span>
                     <a href="#" className="link inline-flex items-center gap-1"><Download className="h-3.5 w-3.5" /> PDF</a>
                   </div>
                 ))}
               </div>
-              <div className="card p-4">
+              <div className="rounded-2xl border border-sand-200 bg-white p-4">
                 <b className="text-sm">Payments</b>
-                <div className="flex justify-between py-1 text-sm"><span>Deposit</span><b className="text-savanna-700">Paid</b></div>
+                <div className="mt-1 flex justify-between py-1 text-sm"><span>Deposit</span><b className="text-savanna-700">Paid</b></div>
                 <div className="flex justify-between py-1 text-sm"><span>Duty balance</span><b>Due on arrival</b></div>
                 <button className="btn btn-green btn-md mt-2 w-full">Pay balance via M-Pesa</button>
               </div>
             </aside>
           </div>
         </Container>
-      </section>
+      </Section>
     </>
   );
 }
