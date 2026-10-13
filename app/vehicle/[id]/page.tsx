@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Gauge, Fuel, Settings2, Car, Palette, Users, ShieldCheck, MapPin, Phone } from "lucide-react";
+import { Gauge, Fuel, Settings2, Car, Palette, Users, ShieldCheck, MapPin, Phone, FileText, Download } from "lucide-react";
 import { Container } from "@/components/container";
 import { VehicleCard } from "@/components/vehicle-card";
 import { getVehicle, vehicles } from "@/lib/data";
@@ -73,9 +73,12 @@ export default async function VehiclePage({ params }: { params: P }) {
                 <ShieldCheck className="h-5 w-5 text-savanna-700" /> Pre-shipment inspection & auction sheet
               </div>
               <p className="mt-2 text-sm text-muted">KEBS roadworthiness (QISJ) confirmed{v.grade ? ` · auction grade ${v.grade}` : ""} · no accident history.</p>
-              <div className="mt-4 grid grid-cols-3 gap-4">
-                {["Auction sheet", "Inspection certificate", "Chassis & odometer"].map((d) => (
-                  <div key={d} className="grid h-28 place-items-center rounded-xl border border-dashed border-sand-200 text-xs text-muted">{d}</div>
+              <div className="mt-4">
+                {["Auction sheet", "Inspection certificate (CoC)", "Chassis & odometer photos"].map((d) => (
+                  <div key={d} className="flex items-center justify-between border-b border-dashed border-sand-200 py-2.5 text-sm last:border-0">
+                    <span className="flex items-center gap-2 text-muted"><FileText className="h-4 w-4 shrink-0" />{d}</span>
+                    <a href="#" className="link inline-flex items-center gap-1"><Download className="h-3.5 w-3.5" /> PDF</a>
+                  </div>
                 ))}
               </div>
             </div>
