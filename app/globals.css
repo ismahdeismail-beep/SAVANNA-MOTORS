@@ -38,6 +38,19 @@
   }
   .label { @apply block text-xs font-semibold text-muted mb-1; }
   .link { @apply text-savanna-700 font-semibold hover:text-savanna-800 underline-offset-2 hover:underline; }
+
+  /* ---- Editorial layout system -------------------------------------
+     One rhythm (section), three surface tones, one type scale. Every
+     page composes these instead of inventing its own padding/heading. */
+  .section { @apply py-16 md:py-24; }
+  .section-tint { @apply bg-sand-50; }
+  .section-dark { @apply bg-savanna-950 text-white; }
+  .eyebrow { @apply text-[11px] font-bold uppercase tracking-[0.2em] text-gold-600; }
+  .section-dark .eyebrow { @apply text-gold-400; }
+  .section-title { @apply font-display text-[1.9rem] leading-[1.08] tracking-[-0.02em] font-extrabold md:text-[2.6rem]; }
+  .section-lead { @apply mt-3 max-w-[58ch] text-base text-muted md:text-lg; }
+  .section-dark .section-lead { @apply text-savanna-200/80; }
+  .link-arrow { @apply inline-flex items-center gap-2 text-sm font-bold text-savanna-800 transition-colors hover:text-gold-600; }
 }
 
 @layer utilities {
