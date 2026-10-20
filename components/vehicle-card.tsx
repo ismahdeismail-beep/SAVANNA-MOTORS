@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Fuel, Gauge, Settings2, MapPin } from "lucide-react";
 import { type Vehicle } from "@/lib/data";
 import { cn, kes, monthlyPayment } from "@/lib/utils";
+import { FavoriteButton } from "./favorite-button";
 
 const conditionStyle: Record<Vehicle["condition"], string> = {
   "Fresh import": "bg-gold-400 text-gold-900",
@@ -31,8 +32,11 @@ export function VehicleCard({ v, className }: { v: Vehicle; className?: string }
             {v.condition}
           </span>
           {v.hot && (
-            <span className="badge absolute right-3 top-3 bg-savanna-900 text-white">Hot</span>
+            <span className="badge absolute right-14 top-3 bg-savanna-900 text-white">Hot</span>
           )}
+          <span className="absolute right-3 top-3">
+            <FavoriteButton id={v.id} />
+          </span>
         </div>
       </Link>
 
