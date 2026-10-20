@@ -61,6 +61,8 @@ export function ScrollDrive() {
 
         mm.add("(prefers-reduced-motion: reduce)", () => {
           gsap.set(photo.current, { x: "-12%" });
+          gsap.set(".lab-car-2", { x: "-8%" });
+          gsap.set(".lab-car-3", { x: "-15%" });
           gsap.set(".sd-progress", { scaleX: 0.5 });
           if (odometer.current) odometer.current.textContent = km(0.5);
           if (legLabel.current) legLabel.current.textContent = legs[1].label;
@@ -90,8 +92,10 @@ export function ScrollDrive() {
             },
           });
 
-          // The photo pans right-to-left, so the car appears to drive past.
+          // Multiple cars pan right-to-left at different speeds (parallax traffic).
           tl.fromTo(photo.current, { x: "5%" }, { x: "-22%" }, 0);
+          tl.fromTo(".lab-car-2", { x: "12%" }, { x: "-18%" }, 0);
+          tl.fromTo(".lab-car-3", { x: "0%" }, { x: "-28%" }, 0);
           tl.fromTo(".sd-progress", { scaleX: 0 }, { scaleX: 1 }, 0);
           tl.fromTo(
             ".sd-lane",
@@ -154,13 +158,25 @@ export function ScrollDrive() {
       </Container>
 
       <div ref={stage} className="relative mt-12 h-[170px] sm:h-[190px] md:mt-16 md:h-[214px]">
-        {/* Real car photograph, panning right-to-left on scroll. */}
+        {/* Multiple real cars, panning right-to-left at different speeds. */}
         <img
           ref={photo}
           src="/car.jpg"
           alt=""
           aria-hidden="true"
-          className="absolute inset-y-0 left-0 h-full w-[135%] object-cover object-center will-change-transform"
+          className="absolute left-0 top-0 h-[46%] w-[150%] object-cover object-center will-change-transform"
+        />
+        <img
+          src="/extra-07.jpg"
+          alt=""
+          aria-hidden="true"
+          className="lab-car-2 absolute left-0 top-[27%] h-[46%] w-[150%] object-cover object-center will-change-transform"
+        />
+        <img
+          src="/extra-18.jpg"
+          alt=""
+          aria-hidden="true"
+          className="lab-car-3 absolute left-0 top-[54%] h-[46%] w-[150%] object-cover object-center will-change-transform"
         />
         {/* Legibility veil + road surface. */}
         <div
