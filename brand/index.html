@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Savanna Motors — identity options</title>
+    <style>
+      :root {
+        --savanna-950: #0b1f14;
+        --savanna-800: #1b4332;
+        --gold-400: #e9a23b;
+        --gold-500: #d9871f;
+        --gold-600: #bd6816;
+        --sand-50: #fbf9f4;
+        --sand-100: #f7f3ec;
+        --sand-200: #efe8db;
+        --ink: #14201b;
+        --muted: #6b7a72;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--sand-50);
+        color: var(--ink);
+        font: 15px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        padding: 48px 24px 96px;
+      }
+      .wrap { max-width: 1080px; margin: 0 auto; }
+      h1 { font-size: 30px; letter-spacing: -0.02em; margin: 0 0 6px; }
+      .sub { color: var(--muted); margin: 0 0 8px; max-width: 70ch; }
+      h2 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gold-600); margin: 52px 0 4px; }
+      h2 .pill { margin-left: 8px; }
+      .lede { color: var(--muted); margin: 0 0 18px; max-width: 74ch; font-size: 14px; }
+      .row { display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; }
+      .grid2 { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+      .cell {
+        background: #fff; border: 1px solid var(--sand-200); border-radius: 16px;
+        padding: 20px; display: flex; flex-direction: column; gap: 16px; align-items: center;
+        justify-content: center;
+      }
+      .cell.top { justify-content: flex-start; }
+      .cell.dark { background: var(--savanna-950); border-color: #14301f; }
+      .sizes { display: flex; gap: 22px; align-items: flex-end; }
+      figure { margin: 0; display: flex; flex-direction: column; gap: 6px; align-items: center; }
+      figcaption { font-size: 10px; color: var(--muted); letter-spacing: 0.08em; }
+      .cell.dark figcaption { color: #6f8d7c; }
+      .lockup { display: flex; align-items: center; gap: 10px; }
+      .wordmark { line-height: 1; }
+      .wordmark .name { font-weight: 800; font-size: 17px; letter-spacing: -0.02em; color: var(--savanna-800); }
+      .wordmark .name i { font-style: normal; color: var(--gold-500); }
+      .wordmark .tag { display: block; font-size: 9px; letter-spacing: 0.18em; color: var(--muted); margin-top: 3px; }
+      .dark .wordmark .name { color: #fff; }
+      .dark .wordmark .name i { color: var(--gold-400); }
+      .dark .wordmark .tag { color: #7d9c8a; }
+      .mono-light { color: var(--savanna-800); }
+      .mono-dark { color: var(--gold-400); }
+      .pill {
+        display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: .12em;
+        text-transform: uppercase; background: var(--gold-400); color: #6b3217;
+        border-radius: 999px; padding: 3px 9px; vertical-align: 2px;
+      }
+      .note { font-size: 13px; color: var(--muted); margin-top: 12px; max-width: 74ch; }
+      .browser-tab {
+        display: flex; align-items: center; gap: 8px; background: #dee1e6; border-radius: 10px 10px 0 0;
+        padding: 8px 16px 8px 10px; font-size: 12px; color: #333;
+      }
+      .stars { letter-spacing: .3em; color: var(--gold-500); font-size: 13px; }
+      code { background: var(--sand-100); padding: 1px 5px; border-radius: 5px; font-size: 12.5px; }
+      .split { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); }
+      .plate { background: var(--savanna-800); color:#fff; border-radius: 14px; padding: 26px; display:flex; flex-direction:column; gap:12px; align-items:center; }
+      .plate .tagline { font-size: 11px; letter-spacing: .2em; color: #a9c8b6; text-transform: uppercase; }
+      .avatar { display:flex; gap:14px; align-items:center; }
+      .avatar .circle { width:56px; height:56px; border-radius:999px; background: var(--savanna-800); display:grid; place-items:center; }
+    </style>
+  </head>
+  <body>
+    <!-- ════════ mark definitions (defined once, referenced everywhere) ════════ -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <!-- A: acacia + road -->
+        <symbol id="mark-a" viewBox="0 0 40 40">
+          <circle cx="20" cy="20" r="19.5" fill="#1b4332" />
+          <path d="M8.6 19.2C10.2 14.4 12.8 11.4 16.4 11.2L23.6 11.2C27.2 11.4 29.8 14.4 31.4 19.2C28.4 18 24.4 17.6 20 17.6C15.6 17.6 11.6 18 8.6 19.2Z" fill="#e9a23b" />
+          <path d="M20 16.6V30" stroke="#e9a23b" stroke-width="1.7" stroke-linecap="round" />
+          <path d="M20 25L14.8 18.7M20 25L25.2 18.7" fill="none" stroke="#e9a23b" stroke-width="1.2" stroke-linecap="round" />
+          <path d="M9.4 30C14 29.3 26 29.3 30.6 30" fill="none" stroke="#e9a23b" stroke-width="1.5" stroke-linecap="round" opacity=".8" />
+        </symbol>
+        <!-- A2: same, road drawn as lane dashes -->
+        <symbol id="mark-a2" viewBox="0 0 40 40">
+          <circle cx="20" cy="20" r="19.5" fill="#1b4332" />
+          <path d="M8.6 19.2C10.2 14.4 12.8 11.4 16.4 11.2L23.6 11.2C27.2 11.4 29.8 14.4 31.4 19.2C28.4 18 24.4 17.6 20 17.6C15.6 17.6 11.6 18 8.6 19.2Z" fill="#e9a23b" />
+          <path d="M20 16.6V30" stroke="#e9a23b" stroke-width="1.7" stroke-linecap="round" />
+          <path d="M20 25L14.8 18.7M20 25L25.2 18.7" fill="none" stroke="#e9a23b" stroke-width="1.2" stroke-linecap="round" />
+          <path d="M9.4 30C14 29.3 26 29.3 30.6 30" fill="none" stroke="#e9a23b" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3.2 2.4" opacity=".85" />
+        </symbol>
+        <!-- B: waypoints -->
+        <symbol id="mark-b" viewBox="0 0 40 40">
+          <circle cx="20" cy="20" r="19.5" fill="#1b4332" />
+          <path d="M11 28L16.5 21L23 24L28.5 13.5" fill="none" stroke="#e9a23b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="11" cy="28" r="1.9" fill="#e9a23b" />
+          <circle cx="16.5" cy="21" r="1.6" fill="#e9a23b" />
+          <circle cx="23" cy="24" r="1.6" fill="#e9a23b" />
+          <circle cx="28.5" cy="13.5" r="2.6" fill="#e9a23b" />
+        </symbol>
+        <!-- C: road to the horizon -->
+        <symbol id="mark-c" viewBox="0 0 40 40">
+          <circle cx="20" cy="20" r="19.5" fill="#1b4332" />
+          <circle cx="20" cy="11.5" r="4.6" fill="#e9a23b" />
+          <path d="M9.5 31.5L18.2 17.5H21.8L30.5 31.5Z" fill="#e9a23b" />
+          <path d="M20 17.5V31.5" stroke="#1b4332" stroke-width="1.1" stroke-dasharray="2.4 2.2" />
+        </symbol>
+        <!-- one-colour, inherits currentColor -->
+        <symbol id="mark-mono" viewBox="0 0 40 40">
+          <path d="M8.6 19.2C10.2 14.4 12.8 11.4 16.4 11.2L23.6 11.2C27.2 11.4 29.8 14.4 31.4 19.2C28.4 18 24.4 17.6 20 17.6C15.6 17.6 11.6 18 8.6 19.2Z" fill="currentColor" />
+          <path d="M20 16.6V30" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+          <path d="M20 25L14.8 18.7M20 25L25.2 18.7" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+          <path d="M9.4 30C14 29.3 26 29.3 30.6 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".8" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="wrap">
+      <h1>Savanna Motors — identity options</h1>
+      <p class="sub">
+        Three symbolic marks. No initials, no generic car silhouette, no chrome. Flat, two-colour, and
+        drawn in the palette the site already uses: Savanna green with a single Acacia gold.
+      </p>
+      <p class="sub">
+        Each mark is shown at real size for a browser tab (16), a favicon on a retina display (32), the
+        site header (40) and a showroom sign (96), on both the light and dark surfaces it will live on.
+        Judge the 16 and 32 rows first — that is where most logos fail.
+      </p>
+
+      <!-- ─────────────────────────── A ─────────────────────────── -->
+      <h2>Concept A — Acacia <span class="pill">implemented</span></h2>
+      <p class="lede">
+        The umbrella acacia is the one silhouette that says <em>savanna</em> without a caption, and the
+        company already owns the name. Flat-topped canopy, thin forked trunk, and a hairline of road
+        running under it so the tree stands <em>beside</em> the journey rather than on a dead horizon.
+        It cannot be mistaken for a manufacturer badge, which matters when it sits in the window next
+        to Toyota and Subaru crests.
+      </p>
+      <div class="grid2">
+        <div class="cell top">
+          <div class="sizes">
+            <figure><svg width="16" height="16" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a" /></svg><figcaption>16 · tab</figcaption></figure>
+            <figure><svg width="32" height="32" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a" /></svg><figcaption>32</figcaption></figure>
+            <figure><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a" /></svg><figcaption>40 · header</figcaption></figure>
+            <figure><svg width="96" height="96" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a" /></svg><figcaption>96 · sign</figcaption></figure>
+          </div>
+          <div class="lockup">
+            <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a" /></svg>
+            <span class="wordmark">
+              <span class="name">SAVANNA<i>MOTORS</i></span>
+              <span class="tag">IMPORT · FINANCE · DRIVE</span>
+            </span>
+          </div>
+          <div class="browser-tab">
+            <svg width="16" height="16" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a" /></svg>
+            Savanna Motors — Import, finance, drive
+          </div>
+        </div>
+
+        <div class="cell dark">
+          <div class="lockup">
+            <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a" /></svg>
+            <span class="wordmark">
+              <span class="name">SAVANNA<i>MOTORS</i></span>
+              <span class="tag">IMPORT · FINANCE · DRIVE</span>
+            </span>
+          </div>
+          <div class="sizes">
+            <figure><svg width="16" height="16" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a" /></svg><figcaption>16</figcaption></figure>
+            <figure><svg width="32" height="32" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a" /></svg><figcaption>32</figcaption></figure>
+            <figure><svg width="64" height="64" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a" /></svg><figcaption>64</figcaption></figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="split" style="margin-top:16px">
+        <div class="plate">
+          <svg width="72" height="72" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a" /></svg>
+          <span class="tagline">Import · Finance · Drive</span>
+          <span class="stars">★★★★★</span>
+        </div>
+        <div class="cell mono-light"><svg width="80" height="80" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-mono" /></svg><figcaption>one colour · stationery, stamps, embroidery</figcaption></div>
+        <div class="cell dark"><svg width="80" height="80" viewBox="0 0 40 40" aria-hidden="true" class="mono-dark"><use href="#mark-mono" /></svg><figcaption>one colour on dark</figcaption></div>
+        <div class="cell"><div class="avatar"><span class="circle"><svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a" /></svg></span><span class="circle"><svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-mono" /></svg></span></div><figcaption>avatars · WhatsApp, Instagram, sales reps</figcaption></div>
+      </div>
+      <p class="note">
+        Option <strong>A2</strong> below swaps the solid road for lane dashes — more literal "road",
+        slightly busier when it is 16&nbsp;px wide. Pick one and it ships on every surface.
+      </p>
+      <div class="row" style="margin-top:14px">
+        <div class="cell"><div class="sizes">
+          <figure><svg width="16" height="16" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a2" /></svg><figcaption>16</figcaption></figure>
+          <figure><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a2" /></svg><figcaption>40</figcaption></figure>
+          <figure><svg width="96" height="96" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-a2" /></svg><figcaption>96 · dashed road</figcaption></figure>
+        </div></div>
+      </div>
+
+      <!-- ─────────────────────────── B ─────────────────────────── -->
+      <h2>Concept B — Waypoints</h2>
+      <p class="lede">
+        For a business whose product is tracking: a route rising through three waypoints, the last one
+        filled gold for arrival. Pure abstraction — the most tech-forward of the three, and the least
+        connected to the name.
+      </p>
+      <div class="grid2">
+        <div class="cell">
+          <div class="sizes">
+            <figure><svg width="16" height="16" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-b" /></svg><figcaption>16</figcaption></figure>
+            <figure><svg width="32" height="32" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-b" /></svg><figcaption>32</figcaption></figure>
+            <figure><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-b" /></svg><figcaption>40</figcaption></figure>
+            <figure><svg width="96" height="96" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-b" /></svg><figcaption>96</figcaption></figure>
+          </div>
+        </div>
+        <div class="cell dark">
+          <div class="lockup">
+            <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-b" /></svg>
+            <span class="wordmark"><span class="name">SAVANNA<i>MOTORS</i></span><span class="tag">IMPORT · FINANCE · DRIVE</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─────────────────────────── C ─────────────────────────── -->
+      <h2>Concept C — Road to the horizon</h2>
+      <p class="lede">
+        The import story in one shape: a road converging on the horizon with the sun over it. Warm and
+        instantly readable — but closer to a travel or logistics marque than to a dealer's own mark.
+      </p>
+      <div class="grid2">
+        <div class="cell">
+          <div class="sizes">
+            <figure><svg width="16" height="16" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-c" /></svg><figcaption>16</figcaption></figure>
+            <figure><svg width="32" height="32" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-c" /></svg><figcaption>32</figcaption></figure>
+            <figure><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-c" /></svg><figcaption>40</figcaption></figure>
+            <figure><svg width="96" height="96" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-c" /></svg><figcaption>96</figcaption></figure>
+          </div>
+        </div>
+        <div class="cell dark">
+          <div class="lockup">
+            <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#mark-c" /></svg>
+            <span class="wordmark"><span class="name">SAVANNA<i>MOTORS</i></span><span class="tag">IMPORT · FINANCE · DRIVE</span></span>
+          </div>
+        </div>
+      </div>
+
+      <h2>Where it comes from</h2>
+      <p class="lede">
+        2026 automotive branding has flattened out — no chrome, no bevels, and marks that have to read as
+        a 16&nbsp;px tab icon. The counter-trend is character over sterility, and the strongest dealership
+        marks lean on something local rather than on a generic car outline or a monogram. For a Kenyan
+        importer named Savanna, the flat-topped acacia is the honest answer: it is the country's own
+         silhouette, it is not on anyone's grille, and it belongs to this company and no other.
+      </p>
+      <p class="note">
+        Replaces the current <code>SM</code> monogram in the header, footer and <code>app/icon.svg</code>.
+      </p>
+    </div>
+  </body>
+</html>

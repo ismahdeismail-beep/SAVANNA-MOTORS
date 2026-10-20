@@ -1,5 +1,6 @@
 import { Phone, Mail } from "lucide-react";
 import { Container } from "./container";
+import { LogoMark } from "./logo";
 import { EMAIL, PHONE } from "@/lib/data";
 
 const cols: { title: string; links: [string, string][] }[] = [
@@ -13,7 +14,10 @@ export function SiteFooter() {
     <footer className="bg-savanna-950 text-savanna-200">
       <Container className="grid gap-10 py-12 md:grid-cols-4">
         <div>
-          <div className="font-display text-lg font-extrabold text-white">SAVANNA<span className="text-gold-400">MOTORS</span></div>
+          <div className="flex items-center gap-2.5">
+            <LogoMark className="h-9 w-9" />
+            <div className="font-display text-lg font-extrabold text-white">SAVANNA<span className="text-gold-400">MOTORS</span></div>
+          </div>
           <p className="mt-2 max-w-[32ch] text-sm text-savanna-300/80">Import · Finance · Drive. Sourcing quality vehicles from Japan, the UK and Dubai for East Africa.</p>
           <div className="mt-3 flex flex-wrap gap-2 text-[10px] font-bold">
             <span className="rounded-full bg-savanna-800 px-2.5 py-1">eCitizen</span>

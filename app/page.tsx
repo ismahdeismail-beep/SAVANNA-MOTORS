@@ -15,6 +15,7 @@ import { SearchBar } from "@/components/search-bar";
 import { Section, SectionHeader } from "@/components/section";
 import { VehicleCard } from "@/components/vehicle-card";
 import { FinanceCalculator } from "@/components/finance-calculator";
+import { ScrollDrive } from "@/components/scroll-drive";
 import { vehicles, importSteps, guides, banks } from "@/lib/data";
 
 const trust = [
@@ -126,6 +127,9 @@ export default function HomePage() {
           ))}
         </Container>
       </div>
+
+      {/* ROUTE — the drive itself, scrubbed to scroll; sets up the Six steps below */}
+      <ScrollDrive />
 
       {/* IMPORT JOURNEY — numbered editorial list */}
       <Section tone="tint">

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Container } from "./container";
+import { LogoMark } from "./logo";
 import { PHONE } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
@@ -48,7 +49,7 @@ export function SiteHeader() {
     >
       <Container className="flex items-center justify-between gap-4 py-3">
         <Link href="/" className="flex items-center gap-2.5">
-          <span className="grid h-10 w-10 place-items-center rounded-full bg-savanna-800 font-display text-sm font-extrabold text-gold-400">SM</span>
+          <LogoMark className="h-10 w-10" />
           <span className="leading-none">
             <span className="block font-display text-[17px] font-extrabold tracking-tight text-savanna-800">
               SAVANNA<span className="text-gold-400">MOTORS</span>
